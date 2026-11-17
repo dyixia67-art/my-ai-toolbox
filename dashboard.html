@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日趋势看板 · 我的 AI 工具箱</title>
+<style>body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:960px;margin:0 auto;padding:16px;color:#222;line-height:1.6;background:#f7f5f0}
+h1{font-size:24px;margin:8px 0 4px}.sub{color:#666;font-size:14px}
+.card{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px;margin:12px 0}
+.card h2{margin:0 0 8px;font-size:18px}.card p{margin:4px 0}
+a{color:#0b6fa4}.muted{color:#888;font-size:13px}
+.bar-row{display:flex;align-items:flex-end;gap:3px;height:120px;padding-top:8px;border-bottom:1px solid #ddd;overflow-x:auto}
+.bar{flex:1;min-width:14px;border-radius:3px 3px 0 0;position:relative}
+.bar.up{background:#2e7d32}.bar.down{background:#c62828}.bar.none{background:#ccc}
+.bar-lab{font-size:11px;color:#666;white-space:nowrap}
+.chip{display:inline-block;background:#eef6fb;border-radius:12px;padding:2px 10px;margin:2px;font-size:13px}
+.daybtn{display:inline-block;margin:3px;padding:8px 12px;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer;font-size:14px}
+.daybtn.sel{background:#1f4d3a;color:#fff;border-color:#1f4d3a}
+.daybtn.missing{opacity:.45}
+input[type=search]{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+pre{white-space:pre-wrap;word-break:break-word;background:#fafafa;border:1px solid #eee;border-radius:8px;padding:12px;font-size:14px;line-height:1.7;max-height:70vh;overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid #eee;padding:6px 4px;text-align:left;vertical-align:top}
+@media(max-width:600px){h1{font-size:20px}.card{padding:12px}}</style></head>
+<body>
+<h1>📈 每日趋势看板</h1>
+<p class="sub"><a href="index.html">← 回目录</a> · 数据来源：每天 08:15 基金早报 + 21:30 AI 日报。看板只加载摘要，全文点哪天才加载哪天。<br><span class="muted">公开市场信息解读，不构成投资建议。</span></p>
+
+<div class="card"><h2>今日摘要</h2><div id="today">正在加载…</div></div>
+
+<div class="card"><h2>基金趋势 · 沪深300（只含简报明确给出的指数值）</h2>
+<p class="muted">有记录的天数：<span id="csiCount"></span> · 缺失的日期不是没有市场，而是简报当天没有给出可核实的指数值（或周末复用周五值），已略去不编造。完整口径见 data/index.json 的 csi300_omitted。</p>
+<div class="bar-row" id="csiBars"></div><div id="csiLabels"></div></div>
+
+<div class="card"><h2>关键买卖信号 · 历史</h2><div id="signals"></div>
+<p class="muted">🟢继续定投：全期只在 2026-10-22 新触发过一次（沪深300联接，见当日全文）；🔴考虑止盈：因止盈目标与再平衡偏离上限待填，全期未触发；⚫逻辑破坏：全期未触发。</p></div>
+
+<div class="card"><h2>14 只持仓 · 最新状态</h2><table id="holdings"></table>
+<p class="muted">状态取自最新一期简报（2026-11-17，另含 11-06 确认的限大额存续项）；“无新信号”指最新一期没有点名这只基金。</p></div>
+
+<div class="card"><h2>AI 趋势 · 每日日报条目数</h2><div class="bar-row" id="aiBars"></div><div id="aiLabels"></div>
+<h3 style="margin:14px 0 6px">这 30 天反复出现的 4 条主线</h3>
+<ol><li><b>管住 agent：</b>从“能办事”到“被管住、被拦下”——网站封堵、谈判规范、后门与合规层是 10 月下旬到 11 月的主线。</li>
+<li><b>开源 / 开放权重放量：</b>Kimi、Mistral、Qwen、DeepSeek 等权重与低价模型轮番发布，能力下放、成本下降。</li>
+<li><b>常驻 / 主动 agent 长进“钱、脸、办事”：</b>Dots、Muse、灵光 2.0 等交代完不用盯着，11 月 13 日 Dots 还补上了钱包代付。</li>
+<li><b>钱在重新定价：</b>OpenAI、Anthropic 估值下修、IPO 定价落锤，叠加英伟达 CEO 风波，产品发布与市值波动同天出现。</li></ol>
+<h3 style="margin:14px 0 6px">最近 10 期主线</h3><div id="recent10"></div></div>
+
+<div class="card"><h2>🔍 搜摘要（只搜索引，不翻全文）</h2>
+<input type="search" id="q" placeholder="搜日期、新词、基金名，如：英伟达、Qwen、广发纳指、2026-11-12">
+<div id="results" style="margin-top:8px"></div></div>
+
+<div class="card"><h2>📅 按日期看全文（点哪天，才加载哪天）</h2>
+<div id="calendar"></div>
+<div id="detail" style="margin-top:12px"><p class="muted">点上面任意一天，这里会分别加载当天的基金早报全文和 AI 日报全文。没有的那一项会写明“当天无…”，不会编内容。</p></div></div>
+
+<p class="muted">数据文件：data/index.json（摘要索引）· 全文：archive/fund/YYYY-MM-DD.md、archive/ai/YYYY-MM-DD.md · 目录：data/catalog.json</p>
+<script>
+const HOLDINGS=[
+["天弘全球高端制造混合(QDII)A","无新信号"],
+["天弘全球新能源汽车股票(QDII-LOF)C","无新信号"],
+["富国全球科技互联网股票(QDII)C","🟡观察（11-17：纳指隔夜下跌）"],
+["易方达全球成长精选混合(QDII)A","🟡观察存续（限大额1万元/日，三季报偏离复核中）"],
+["广发纳斯达克100ETF联接(QDII)A","🟡观察（11-17：场内溢价约39%）"],
+["建信新兴市场优选混合(QDII)A","🟡观察存续（限大额100元/日，11-06确认）"],
+["华夏中证A500ETF联接A","无新信号"],
+["易方达中证500ETF联接A","无新信号"],
+["易方达沪深300ETF联接A","无新信号（10-22曾🟢触发一次，见当日全文）"],
+["银华集成电路混合C","🟡观察（11-17：BIS出口管制，半导体承压）"],
+["华泰柏瑞质量成长混合A","无新信号"],
+["方正富邦核心优势混合C","无新信号"],
+["博时裕景纯债债券C","无新信号"],
+["交银施罗德招享一年持有期混合(FOF)C","无新信号"]];
+let IDX=null;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function plain(s){return String(s).replace(/\*\*/g,'');}
+fetch('data/index.json').then(r=>r.json()).then(d=>{IDX=d;render(d);})
+.catch(()=>{document.getElementById('today').textContent='索引加载失败，请检查网络后刷新。';});
+function render(d){
+  const rows=d.rows;
+  const ai=[...rows].reverse().find(r=>r.ai), fu=[...rows].reverse().find(r=>r.fund);
+  let t='';
+  if(fu) t+='<p><b>基金 '+fu.date+'：</b>'+esc(fu.fund.summary)+'</p>';
+  if(ai) t+='<p><b>AI '+ai.date+'：</b>'+esc(plain(ai.ai.main))+'</p>';
+  document.getElementById('today').innerHTML=t;
+  // CSI300 bars (verified only)
+  const csi=rows.filter(r=>r.fund&&r.fund.csi300!==null&&r.fund.csi300!==undefined);
+  document.getElementById('csiCount').textContent=csi.length+' 天（'+csi[0].date+' 至 '+csi[csi.length-1].date+'）';
+  const mx=Math.max(...csi.map(r=>Math.abs(r.fund.csi300)));
+  document.getElementById('csiBars').innerHTML=csi.map(r=>{
+    const v=r.fund.csi300, h=Math.max(6,Math.abs(v)/mx*110);
+    return '<div class="bar '+(v>=0?'up':'down')+'" style="height:'+h+'px" title="'+r.date+' 沪深300 '+(v>0?'+':'')+v+'%"></div>';
+  }).join('');
+  document.getElementById('csiLabels').innerHTML=csi.map(r=>'<span class="bar-lab">'+r.date.slice(5)+' '+(r.fund.csi300>0?'+':'')+r.fund.csi300+'%</span>').join(' ');
+  // signal strip
+  const sigRows=rows.filter(r=>r.fund&&r.fund.signal!=='none');
+  document.getElementById('signals').innerHTML=sigRows.map(r=>{
+    const icon=r.fund.signal==='green'?'🟢':'🟡';
+    return '<span class="chip">'+icon+' '+r.date+' '+esc(r.fund.watch.concat(r.fund.green).join('、'))+'</span>';
+  }).join('')+'<p class="muted">其余日期：今日无新的关键买卖信号（点日期看全文核对）。</p>';
+  // holdings
+  document.getElementById('holdings').innerHTML='<tr><th>基金</th><th>最新状态</th></tr>'+HOLDINGS.map(h=>'<tr><td>'+esc(h[0])+'</td><td>'+esc(h[1])+'</td></tr>').join('');
+  // AI bars
+  const arows=rows.filter(r=>r.ai);
+  const amx=Math.max(...arows.map(r=>r.ai.items));
+  document.getElementById('aiBars').innerHTML=arows.map(r=>'<div class="bar up" style="height:'+Math.max(8,r.ai.items/amx*110)+'px" title="'+r.date+' '+r.ai.items+' 条"></div>').join('');
+  document.getElementById('aiLabels').innerHTML=arows.map(r=>'<span class="bar-lab">'+r.date.slice(5)+' '+r.ai.items+'条</span>').join(' ');
+  document.getElementById('recent10').innerHTML=[...arows].reverse().slice(0,10).map(r=>'<p><b>'+r.date+'</b> '+esc(plain(r.ai.main))+'</p>').join('');
+  // calendar
+  const cal=document.getElementById('calendar');
+  cal.innerHTML=rows.map(r=>{
+    const has=r.ai||r.fund;
+    return '<button class="daybtn'+(has?'':' missing')+'" data-date="'+r.date+'">'+r.date.slice(5)+'</button>';
+  }).join('');
+  cal.querySelectorAll('.daybtn').forEach(b=>b.addEventListener('click',()=>loadDate(b.dataset.date)));
+  document.getElementById('q').addEventListener('input',e=>search(e.target.value.trim()));
+}
+function search(q){
+  const box=document.getElementById('results');
+  if(!q){box.innerHTML='';return;}
+  const hits=IDX.rows.filter(r=>{
+    const s=(r.date+' '+(r.ai?r.ai.main+' '+r.ai.terms.join(' '):'')+' '+(r.fund?r.fund.summary+' '+r.fund.watch.join(' '):'')).toLowerCase();
+    return s.includes(q.toLowerCase());
+  }).reverse().slice(0,20);
+  box.innerHTML=hits.length?hits.map(r=>'<p><a href="javascript:void(0)" onclick="loadDate(''+r.date+'')">'+r.date+'</a> '+(r.ai?esc(plain(r.ai.main)).slice(0,60)+'…':'')+(r.fund?' <span class="muted">'+esc(r.fund.summary).slice(0,40)+'</span>':'')+'</p>').join(''):'<p class="muted">摘要里没找到“'+esc(q)+'”。只搜摘要，不翻全文；想查全文里的词，点日期打开当天全文再用浏览器查找（Ctrl+F）。</p>';
+}
+async function loadDate(date){
+  document.querySelectorAll('.daybtn').forEach(b=>b.classList.toggle('sel',b.dataset.date===date));
+  const box=document.getElementById('detail');
+  box.innerHTML='<h3>'+date+'</h3><p>正在加载当天全文…</p>';
+  async function get(url){
+    try{const r=await fetch(url); if(!r.ok) return null; return await r.text();}
+    catch(e){return null;}
+  }
+  const [fund,ai]=await Promise.all([get('archive/fund/'+date+'.md'),get('archive/ai/'+date+'.md')]);
+  let h='<h3>'+date+' 全文</h3>';
+  h+='<h4>基金早报</h4>'+(fund?'<pre>'+esc(fund)+'</pre>':'<p class="muted">当天无基金早报。</p>');
+  h+='<h4>AI 日报</h4>'+(ai?'<pre>'+esc(ai)+'</pre>':'<p class="muted">当天无 AI 日报。</p>');
+  box.innerHTML=h;
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body></html>

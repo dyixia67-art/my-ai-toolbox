@@ -1,35 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的 AI 工具箱</title>
-<style>
-body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:800px;margin:0 auto;padding:24px;line-height:1.7;background:#f7f7f5;color:#222}
-h1{font-size:32px} h2{margin-top:36px;border-bottom:2px solid #eee;padding-bottom:8px}
-.card{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px 20px;margin:12px 0}
-.card b{font-size:18px}
-</style>
-</head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的 AI 工具箱 · 目录</title>
+<style>body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:960px;margin:0 auto;padding:16px;color:#222;line-height:1.6;background:#f7f5f0}
+h1{font-size:26px;margin:8px 0 4px}.sub{color:#666;font-size:14px}
+.card{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px;margin:12px 0}
+.card h2{margin:0 0 6px;font-size:18px}.card p{margin:4px 0;color:#555}
+.card a.btn{display:inline-block;margin-top:8px;background:#1f4d3a;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.grid .card{margin:0}.grid .card a{color:#0b6fa4;text-decoration:none;font-weight:600}
+.muted{color:#888;font-size:13px}.today{font-size:15px}
+@media(max-width:600px){h1{font-size:22px}}</style></head>
 <body>
 <h1>🧰 我的 AI 工具箱</h1>
-<p>这是我的第一个 GitHub 网页，用来收集好用的 AI 工具。</p>
-
-<h2>💬 日常聊天</h2>
-<div class="card"><b>ChatGPT</b><br>日常问答、写东西、做计划，我的主力。</div>
-<div class="card"><b>Muse</b><br>Meta 的个人 AI 助手，能聊天、做简报、管日程。</div>
-<div class="card"><b>Gemini</b><br>Google 的 AI，查资料、做表格很方便。</div>
-
-<h2>💻 编程和做事</h2>
-<div class="card"><b>Codex</b><br>帮我写代码、搭 AI 团队的助手。</div>
-<div class="card"><b>GitHub Copilot</b><br>在编辑器里帮我补全代码。</div>
-
-<h2>🔗 免费聚合</h2>
-<div class="card"><b>Cherry Studio</b><br>Windows 上的免费聚合客户端，一个窗口换多个模型。</div>
-<div class="card"><b>Chatbox AI</b><br>手机和电脑都能用，每天有免费额度可以试。</div>
-<div class="card"><b>DeepSeek</b><br>便宜好用的国产模型，适合日常用。</div>
-<div class="card"><b>Groq</b><br>免费跑 Meta Llama 的地方，速度很快，不用绑卡就能试。</div>
-  
-<p style="color:#888;margin-top:40px">—— 这个页面是我在 GitHub 上从 0 到 1 做出来的。</p>
-</body>
-</html>
+<p class="sub">目录页 · 内容在 GitHub 仓库 dyixia67-art/my-ai-toolbox 里，每天由定时任务更新。点卡片进对应板块，内容按天归档，随时可查。</p>
+<div class="card" style="border:2px solid #1f4d3a">
+<h2>📈 每日趋势看板</h2>
+<p class="today" id="today">正在加载今日摘要…</p>
+<a class="btn" href="dashboard.html">打开看板 →</a>
+</div>
+<div class="card">
+<h2>📕 AI 软件资料大全</h2>
+<p>市面上最新的 AI 软件及搭配软件汇总：功能、推荐用法、官网链接、复制粘贴速查。快照 2026-11-17，每月 1 号刷新。</p>
+<a class="btn" href="tools.html">在线阅读 →</a>
+<a class="btn" style="background:#666" href="AI软件资料大全.md">下载 .md</a>
+</div>
+<h2 style="margin-top:24px">目录 · 点卡片进板块</h2>
+<p class="muted">卡片由 data/catalog.json 生成。加一个板块：往 catalog.json 里加一条 + 加对应的源文件，不用改这个页面。</p>
+<div class="grid" id="catalog"><p>正在加载目录…</p></div>
+<p class="muted" style="margin-top:24px">更新方式：每天 08:15 基金早报、21:30 AI 日报推送后，定时任务把当天全文存进 archive/、把摘要写进 data/index.json，再推到 GitHub。看板页只加载摘要，全文点哪天才加载哪天，所以越用越久也不会变卡。<br>不构成投资建议。</p>
+<script>
+fetch('data/index.json').then(r=>r.json()).then(d=>{
+  const rows=d.rows; const ai=[...rows].reverse().find(r=>r.ai); const fu=[...rows].reverse().find(r=>r.fund);
+  let t='';
+  if(fu) t+='基金（'+fu.date+'）：'+(fu.fund.summary||'')+'<br>';
+  if(ai) t+='AI（'+ai.date+'）：'+ai.ai.main.replace(/\*\*/g,'');
+  document.getElementById('today').innerHTML=t||'暂无摘要';
+}).catch(()=>{document.getElementById('today').textContent='摘要加载失败，请检查网络后刷新。';});
+fetch('data/catalog.json').then(r=>r.json()).then(d=>{
+  document.getElementById('catalog').innerHTML=d.sections.map(s=>
+    '<div class="card"><h2><a href="'+s.target+'">'+s.title+'</a></h2><p>'+s.desc+'</p><a href="'+s.target+'">进入 →</a></div>').join('');
+}).catch(()=>{document.getElementById('catalog').innerHTML='<p>目录加载失败，请检查网络后刷新。</p>';});
+</script>
+</body></html>

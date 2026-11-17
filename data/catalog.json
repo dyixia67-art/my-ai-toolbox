@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "title": "AI 工具箱 · 目录",
+  "note": "加一个板块，不用改 HTML：1）在下面 sections 里加一条（含 id、title、desc、target、source）；2）在仓库里加对应的源文件（如 tools.html 里加一节，或新增一个 .md）；3）提交，目录页自动出现新卡片。"
+ },
+ "sections": [
+  {
+   "id": "sec-0",
+   "title": "0 · 有事先选谁",
+   "desc": "一张表先选对工具，再看细节。",
+   "target": "tools.html#sec-0",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-1",
+   "title": "1 · 通用聊天助手",
+   "desc": "每天打开的那个：ChatGPT、Claude、Gemini、Muse、Grok，及国产 DeepSeek、Kimi、豆包、Qwen、GLM、MiniMax、灵光。",
+   "target": "tools.html#sec-1",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-2",
+   "title": "2 · 编程 / CLI / Agent Coding",
+   "desc": "Codex、Claude Code、Cursor、Copilot、Antigravity、OpenClaw、Hermes。",
+   "target": "tools.html#sec-2",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-3",
+   "title": "3 · 常驻智能体",
+   "desc": "交代完不用盯着：Dots、Muse、Grok Bot、Manus、灵光 2.0。",
+   "target": "tools.html#sec-3",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-4",
+   "title": "4 · 搜索与研究",
+   "desc": "Perplexity、NotebookLM、Deep Research：查资料、读一堆文件。",
+   "target": "tools.html#sec-4",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-5",
+   "title": "5 · 生图、生视频、生音频",
+   "desc": "Midjourney、ChatGPT Images 2.6、Veo、Suno、豆包 / 即梦。",
+   "target": "tools.html#sec-5",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-6",
+   "title": "6 · 办公效率",
+   "desc": "Microsoft 365 Copilot、Gemini / Claude for Workspace、Notion AI、WPS AI。",
+   "target": "tools.html#sec-6",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-7",
+   "title": "7 · 聚合客户端",
+   "desc": "一个窗口切多个模型：Cherry Studio、Chatbox、LobeChat、Poe、OpenRouter，附免费 Key 拿法。",
+   "target": "tools.html#sec-7",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-8",
+   "title": "8 · 开源模型与免费 API",
+   "desc": "Llama、Qwen、DeepSeek、Muse Spark Open、Groq、Together、GitHub Models。",
+   "target": "tools.html#sec-8",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-9",
+   "title": "9 · 钉钉 / 飞书接入",
+   "desc": "原生智能伙伴、Skill + MCP + CLI、Linclaw、FastGPT、OpenClaw、Hermes。",
+   "target": "tools.html#sec-9",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-10",
+   "title": "10 · 自动化 / 工作流",
+   "desc": "n8n、Dify、Coze、Zapier / Make：让 AI 自己跑流程。",
+   "target": "tools.html#sec-10",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-11",
+   "title": "11 · 资料库 / 技能复用",
+   "desc": "prompts.chat、LangGPT、GitHub Skills、MCP 服务器合集。",
+   "target": "tools.html#sec-11",
+   "source": "AI软件资料大全.md"
+  },
+  {
+   "id": "sec-12",
+   "title": "12 · 复制粘贴速查",
+   "desc": "最常用的 10 个链接，一行一个，复制就用。",
+   "target": "tools.html#sec-12",
+   "source": "AI软件资料大全.md"
+  }
+ ]
+}

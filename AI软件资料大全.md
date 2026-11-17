@@ -1,0 +1,260 @@
+# AI 软件资料大全：最新 AI + 搭配软件，复制粘贴就能用
+
+> 快照日期：2026-11-17（基于 2026-11-01 全景表刷新 + 11 月上旬核对）
+> 给谁用：ChatGPT Plus + 其他软件 free 用户；Windows 电脑 + iPhone；不会代码、英文不太好，想在一个地方查到、复制、直接打开就用。
+> 怎么用这份文件：在 Markdown 里按 `Ctrl + F` 搜名字、搜任务（比如“写代码”“做 PPT”“钉钉”），找到那一行，点官网链接打开，照“推荐用法”做。
+> 口径：价格、地区、版本号以你打开时官网显示为准，变了就按页面走。带“厂商口径”的是公司自报、未独立验证。
+> 安全红线：不要把 ChatGPT / Claude 的账号密码、Cookie 交给任何聚合站去“复用 Plus/Pro 额度”；API Key 当密码看，只粘贴进你自己装的客户端，不要发给别人、不要贴进公开仓库或截图里。
+
+---
+
+## 0. 先看这张：有事，先选谁（复制版）
+
+| 你要解决的事 | 首选 ★ | 备选 | 为什么 |
+|---|---|---|---|
+| 日常问答、写东西、做计划 | ChatGPT（你已有 Plus） | Muse、Gemini、豆包 | Plus 已经付了，先用它；其他的免费档够用 |
+| 写代码、改 Bug、重构仓库 | Claude Code | Codex、Cursor、Antigravity | Claude Code 开发者口碑最稳；Codex 是你 AI 团队的原生选择 |
+| 不会代码，想让 AI 自己办完一件事 | Dots、Muse | Manus、灵光 2.0 | 常驻智能体，交代完不用盯着 |
+| 查资料、读一堆文件做研究 | NotebookLM | Perplexity、Kimi | NotebookLM 把你的资料变成可问答的知识库；Perplexity 联网给来源 |
+| 做图、做海报、做视频 | Midjourney（图）+ ChatGPT Images 2.6 | Veo、豆包、即梦 | Midjourney 审美最稳；ChatGPT Images 2.6 新增 GIF 动图、SVG 矢量导出 |
+| 做 PPT、表格、文档 | ChatGPT Work | Claude Sheets、Gemini Workspace、Microsoft 365 Copilot | Work 直接出成品；Claude Sheets 11 月 10 日上线付费测试版，可导出 .xlsx |
+| 办公全家桶、邮件日程文档 | Microsoft 365 Copilot | 飞书豆包工作伙伴、钉钉 AI 助手 | 长在 Office / 飞书 / 钉钉里，不用切换 |
+| 批量跑任务、成本敏感 | DeepSeek、GLM Flash | MiniMax M3.1 Flash、Ling | API 只有美国旗舰的零头，适合审计、批量 |
+| 中文长文、中文深度分析 | Kimi K3.1 Pro | 豆包、通义 Qwen | Kimi 长上下文 + 中文理解是强项 |
+| 一个窗口切多个模型、免费试 | Cherry Studio（Windows）+ Chatbox（iPhone） | Poe、OpenRouter | 软件免费，模型用免费 Key / 每日免费点数 |
+| 把 AI 接进钉钉 / 飞书群里 | 飞书豆包工作伙伴 / 钉钉 AI 助手（原生） | OpenClaw、Linclaw、FastGPT | 原生最稳；Linclaw 不用命令行，双击就能接 |
+
+---
+
+## 1. 通用聊天助手：每天打开的那个
+
+### 1.1 国外主流
+
+| 名称 | 官网 | 功能（一句话） | 费用 | 推荐用法（你这样用最顺） |
+|---|---|---|---|---|
+| **ChatGPT** ★你已有 Plus | chatgpt.com | 全能助手：问答、写作、做表、做 PPT、做图、联网研究、编程、常驻办事 | 免费档有限；Plus $20/月 | 主力。日常、写文案、做计划、做表格都先找它。手机用 iOS App，电脑用网页 / 桌面 App。Work 模式做 PPT 和表格直接出成品 |
+| **Claude** | claude.ai | 深度推理、长文档、写作最稳，1M 上下文 | 免费档有限；Pro $20/月 | 写长文、改合同、读一整本书 / 一整个仓库时用。11 月 10 日上线 Claude Sheets（多标签表格，可导出 .xlsx）和 Whiteboards（白板），付费测试版；11 月 10 日起 Claude Meetings 测试版，可加入 Google Meet 做纪要 |
+| **Gemini** | gemini.google.com | Google 生态：Gmail、Docs、Drive、搜索 AI Mode、长任务 | 免费档；AI Pro $19.99/月，Ultra 更贵 | 已经在用 Google 全家桶的人用它。Gemini 4 Argon 已全面开放；Gemini 4 Carbon 11 月 11 日向付费 API / AI Studio / 企业版 / Ultra 开放，主打长程工程和网络安全，API 首发 $2/$10 每百万 token，11 月 30 日起涨到 $4/$20。注意：Gemini API 不含中国大陆/香港/澳门，打不开就跳过 |
+| **Muse** | meta.ai / WhatsApp、Instagram、Messenger 里搜 Meta AI | Meta 个人常驻助手：聊天、做简报、管日程、跨应用办事 | 日常免费；Power $20、Max $100（美国等地） | 在 WhatsApp / IG 里点蓝紫色圆圈，或打 `@Meta AI` 就能问。现在由 Muse Spark 1.1 驱动，不再以 Llama 为主。国内直接用可能受地区限制，以实际能打开为准 |
+| **Grok** | grok.com / X 里 | X 生态助手，实时资讯、社交分析强；Grok Bot 是常驻团队助手 | 免费档；X 订阅合并 Grok + Cursor + X Premium：免费、$8 Plus、$30 Premium、$100 Super、$200 Ultra | 追热点、查 X 上的实时讨论用它；Grok Bot 给团队派活、自己跑流程 |
+
+### 1.2 国内主流（中文、不用绕地区）
+
+| 名称 | 官网 | 功能 | 费用 | 推荐用法 |
+|---|---|---|---|---|
+| **DeepSeek** ★便宜主力 | deepseek.com | 高性价比推理 + 编程，API 极便宜，100 万上下文，MIT 开源权重 | 网页/App 免费；API 按量，极低 | 批量任务、代码审计、长尾任务先用它。主力已换 V4.1-Flash-1017。注意：官方 API 无 SLA，高峰偶有限流，重要任务配重试 |
+| **Kimi** | kimi.com | 长上下文、中文深度分析、审美在线 | 免费档；K3.1 Pro API $2/$10 每百万 token | 读长 PDF、做中文深度分析、做设计稿初稿。K3.1 Pro 10 月 23-24 日发布，100 万上下文 |
+| **豆包** | doubao.com | 中文对话 + 多模态（图片理解突出），办公均衡 | 免费档；豆包工作有企业版 | 日常中文、看图识图、办公。10 月 29 日起豆包工作向团队/企业订阅客户开放第三方模型，首批 Kimi K3.1 Pro、GLM 5.3、DeepSeek V4.1 Flash，按 AI 点数扣 |
+| **通义 Qwen** | tongyi.aliyun.com / qwen.ai | 开源模型主力，中文 + 代码兼顾，可本地部署 | 免费档；API 按量 | 想本地跑、二次开发、或要开源权重时选它。Qwen3.8 家族：Max 旗舰、27B 单卡可跑、Flash 便宜档 |
+| **智谱 GLM** | chatglm.cn / z.ai | 编程 Agent、性价比，法律等垂直版 | 免费档；GLM Flash 极便宜 | 多 Agent 并行编码、批量写代码用 Flash。注意长会话超 2 小时建议开新会话，会退化 |
+| **MiniMax** | minimax.com | Agent 任务低价档 | 网页免费；M3.1 Flash API 约 ¥1/¥4 每百万 token | 和 DeepSeek、GLM Flash 同档的低价 Agent 档，10 月 19 日发布 M3.1 Flash，成本较前代降约 70%（厂商口径） |
+| **蚂蚁 Ling / 灵光** | ling.antgroup.com / 支付宝搜“灵光” | 业务流程 Agent；灵光 2.0 是主动办事的超级 Agent | 免费档为主 | 灵光 2.0：10 月 27 日发布，授权后主动识别需求、持续跟进，打通支付宝账单/会员/出行 + 钉钉、飞书、邮箱、米家，支持 MCP / CLI 调用 |
+
+---
+
+## 2. 编程 / CLI / Agent Coding：不会代码也能看懂怎么选
+
+> CLI 是什么：命令行工具的简称，就是在电脑黑窗口里打字让 AI 干活的工具。你不会代码，先不用装 CLI，先用下面带界面的那几个。等熟悉了，再让 Codex / Claude Code 帮你跑。
+
+| 名称 | 官网 / 获取 | 功能 | 费用 | 推荐用法 |
+|---|---|---|---|---|
+| **Codex** ★你的 AI 团队主力 | OpenAI Codex（ChatGPT 里 / codex CLI） | 编程智能体：本地、手机、云端三种方式跑，改整个仓库、做审查 | 包含在 ChatGPT Plus / Pro / Team 额度里（按用量） | 你 AI 团队的设计、文案、资料角色都走 Codex。默认模型已切 GPT-6.1 Sol。CLI 里用 `codex -m gpt-6.1-terra` 可切便宜效率档 |
+| **Claude Code** | claude.com/product/claude-code | 目前开发者评价最稳的编程智能体，读整个仓库、重构、审查 | 按 Claude 订阅 / API 计费 | 写代码、改 Bug、重构整个仓库首选。长任务前先做 Git 提交，防它顺手改坏旧逻辑 |
+| **Cursor** | cursor.com | AI 编程编辑器，边写边补全、Agent 改多文件 | 免费档；付费套餐与 Grok 打包，Claude / GPT / Gemini 按 API 原价另计 | 想在编辑器里直接让 AI 改代码时用。注意：OpenAI 曾拟议 11 月 12 日断供 Cursor，截至 11 月中旬未确认已执行，依赖 Cursor 内 OpenAI 模型要留备用 |
+| **GitHub Copilot** | github.com/features/copilot | 编辑器内补全、聊天、Agent、代码审查、把 Issue 转 PR | Pro 约 $10/月（付费前在 GitHub 计划页确认） | 如果你用 VS Code，先试 Copilot Free（$0，不用绑卡），看行内补全比 Codex 有没有增量；撞到每月 2,000 次补全上限、或确实需要选模型 / cloud agent / PR review 时再考虑 Pro |
+| **Antigravity** | Google Antigravity（Gemini 生态） | Agent-first 开发平台，2.0 版，内置进 macOS 版 Gemini App | 免费档 + 付费 | Google 生态的编程智能体。注意：11 月 2 日后 Claude Sonnet 4.6 / Opus 4.6 与 GPT-OSS-120b 从 Antigravity 移除，免费用户失去唯一的 Claude 模型，以实际页面为准 |
+| **Gemini CLI / Claude CLI** | Google AI Studio / Anthropic 官网 | 命令行里直接问 AI、改文件 | 按 API 计费 | 会命令行后再试；不会就先跳过，用网页版 |
+| **OpenClaw** | github.com/openclaw/openclaw | 开源 Agent 框架，CLI 配置，一次部署可接多个聊天平台 | 开源免费；模型按 API 计费 | 想把 AI 接进钉钉 / 飞书时用的桥（见第 9 节）。2026.2.2 起内置飞书官方插件 `@openclaw/feishu`，用 WebSocket，不用公网 IP |
+| **Hermes Agent** | Hermes 官网 / GitHub | CLI Agent + Messaging Gateway，原生支持 QQ / 微信 / 飞书 / 钉钉 / 企业微信 | 开源免费 | 同样是接群的桥，Gateway 可同时加载多个 Adapter，一个进程管多个平台 |
+
+---
+
+## 3. 常驻智能体：交代完，不用盯着的那种
+
+| 名称 | 官网 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **Dots**（OpenAI） | ChatGPT 里 / chatgpt.com | 常驻个人 Agent，由 GPT-6 Astra 驱动，有自己的云端电脑和浏览器，两次对话之间继续推进；可把软件工作交给 Codex、研究交给 Work；11 月 13 日上线 ChatGPT Wallet（仅美国 18+ Pro 用户），Dots 可代买、每笔人工确认、真实卡号不进 Agent 上下文 | 给它一个长期职责，比如“每天盯着某个话题，有新进展就告诉我”。Pro / Business Premium 可用，Pro 含第一个 Dot |
+| **Muse**（Meta） | muse.ai / Meta AI App | 个人常驻助手：记事、跨应用办事、主动跟进；另有 Muse Code（编程）、Muse Gadgets（开源硬件 SDK，可直接玩开发板） | 9 月 8 日发布，美国、加拿大、日本、新加坡可用，免费版有每周额度 |
+| **Grok Bot** | X / Grok 里 | 常驻团队助手，给活自己干，跑在共享云电脑上 | 团队里派活、让它自己跑流程、回来交结果 |
+| **Manus** | manus.im | 通用 Agent：给任务、它自己跑完 | 给一个目标、让它自己跑完的任务。OPPO Find X10 已做到系统级 |
+| **灵光 2.0**（蚂蚁） | 支付宝搜“灵光” | 主动式 Agent：授权后主动发现需求、持续管理事务，打通支付宝、钉钉、飞书、邮箱、米家，支持 MCP / CLI | 家庭 / 生活事务：盯钉钉班级群老师通知、整理待办、排版文档 |
+
+---
+
+## 4. 搜索与研究：查资料、读文件
+
+| 名称 | 官网 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **Perplexity** | perplexity.ai | 联网搜索问答，回答带来源 | 问“现在发生了什么”“这个产品多少钱”这种要实时信息的问题 |
+| **NotebookLM** | notebooklm.google.com | 把你的资料变成可问答、带来源的知识库，还能生成播客式音频讲解 | 读一堆 PDF、论文、白皮书时用，上传资料后直接问它，比自己翻快得多 |
+| **ChatGPT Deep Research / Gemini Deep Research** | 各自 App 里 | 联网深度研究，出带来源的长报告 | 要做一份调研报告时用，别用普通聊天框硬扛 |
+
+---
+
+## 5. 生图、生视频、生音频
+
+| 名称 | 官网 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **Midjourney** | midjourney.com | 图像生成，审美标杆 | 做海报、配图、概念图首选。未来约半年规划推 V9、V10 与实时图像生成（规划口径，无确定日期） |
+| **ChatGPT Images 2.6** | ChatGPT 里 | 生图：Flare（快）+ Sunburst（细节一致性好），新增多帧 GIF 动图、固定参考图、圈选局部修改；Image API 支持 SVG 矢量导出 | 做海报初稿、做动图、做视觉示意。SVG 适合做示意，不能当机械制图用 |
+| **Veo**（Google） | Gemini / Google AI Studio 里 | 视频生成 | 做短视频、做产品演示视频 |
+| **Suno / Udio** | suno.com | 音乐生成 | 做背景音乐、做短视频配乐 |
+| **豆包 / 即梦** | doubao.com / jimeng.jianying.com | 中文生图、生视频，图片理解强 | 中文提示词做图、做短视频时顺手 |
+
+> 注意：Sora、Atlas 浏览器、Operator 已于 2026 年内停产，本表不列为可用产品。
+
+---
+
+## 6. 办公效率：长在你本来就用的软件里
+
+| 名称 | 官网 / 入口 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **Microsoft 365 Copilot** | Word / Excel / PPT / Outlook / Teams 里 | 写文档、做表、回邮件、开会纪要一条线；另有 Foundry 平台可跑 Claude 等第三方模型 | 已经在用 Office 全家桶的人直接用它，不用切换。App 分 Home / Code / Autopilot 三个空间，Code 基于 GitHub Copilot 技术 |
+| **Gemini for Workspace** | Google Docs / Sheets / Gmail 里 | 在 Docs / Sheets 侧栏直接改文档、做表 | Google 全家桶用户用它 |
+| **Claude for Workspace** | Google Docs / Sheets / Slides 侧栏 | 同上，Claude 进 Google Workspace 公测 | 喜欢 Claude 写作风格、又在用 Google 文档的人用它 |
+| **Notion AI** | notion.so | 在笔记里直接问、写、整理 | 已经在用 Notion 记笔记的人用它 |
+| **WPS AI** | wps.cn | 国产办公 AI，写文档、做表 | 国产办公场景 |
+
+---
+
+## 7. 聚合客户端：一个窗口切多个模型（免费试的核心）
+
+> 软件免费 ≠ 模型免费。客户端本身免费，模型要么用免费 Key，要么用平台每天给的免费额度。
+
+| 名称 | 下载 / 官网 | 功能 | 费用 | 推荐用法 |
+|---|---|---|---|---|
+| **Cherry Studio** ★Windows 主力 | cherryai.com/download 或 GitHub CherryHQ/cherry-studio 的 Releases，最新 v2.2.2（2026-11-13） | 开源免费桌面客户端，支持 50+ 供应商、300+ 模型，MCP、本地知识库、多模型同屏对比 | 软件免费；模型按 API 计费 | Windows 上装这个做主力。只从官网 / GitHub 下，不要下所谓“安卓版” |
+| **Chatbox AI** ★iPhone 先试 | chatboxai.app；网页版 web.chatboxai.app | 网页、Windows、macOS、Linux、iOS、Android 都免费；自带 Key 是免费功能，另有每天免费算力点数（以 App 内显示为准） | 软件免费；托管服务每天有免费点数 | iPhone 上先不用 Key，用网页版试一句。⚠️ App Store 搜“Chatbox AI”会撞到同名应用，卖家 FLORATE LIMITED、带 $6.99/周订阅，那不是真正的 Chatbox，要从官网点商店链接进 |
+| **LobeChat / LobeHub** | lobehub.com | 桌面 + 网页 + 托管，免费方案已含自带 Key 和云同步 | 免费档 $0；付费档另计 | 想要手机和电脑聊天记录同步时再考虑它 |
+| **Poe** | poe.com | 平台代管型，登录就能选多个模型，不用填 Key | 免费档有限；付费订阅 | 不想搞 Key、只想登录就试多个模型时用它 |
+| **OpenRouter** | openrouter.ai | 一个 Key 接 300+ 模型，按量计费，有轮换免费模型 | 免费模型轮换；付费按量 | 想一次比较很多模型时用它，免费模型以页面显示为准 |
+
+### 7.1 免费 Key 怎么拿（复制版）
+
+| 模型 | 去哪拿 Key | 怎么填进 Cherry Studio | 备注 |
+|---|---|---|---|
+| **Llama（Meta） via Groq** ★最推荐 | console.groq.com 注册，不用绑卡 → 左侧 **API Keys** → **Create API Key**，Key 以 `gsk_` 开头 | 设置 → 模型服务 → Groq → Add API Key 粘贴 → Sync models → Model Check → 打开右上角开关 | 免费层 Llama 3.3 70B 约 30 请求/分钟、每天 1,000 请求；超了报 429，等一等或换 Llama 3.1 8B。Groq 只跑开源模型，没有 GPT、Claude |
+| **Gemini via Google AI Studio**（可选） | aistudio.google.com/apikey → Create API key，Key 以 `AIza…` 开头 | 设置 → 模型服务 → Google Gemini → Add API Key → Sync models → 打开开关 | ⚠️ Gemini API 不含中国大陆/香港/澳门，打不开或提示地区不支持就跳过，别硬绕 |
+| **DeepSeek** | platform.deepseek.com | 设置 → 模型服务 → DeepSeek → 填 `sk-…` | 便宜，按量计费，充值一点点能用很久 |
+| **Qwen / GLM** | 阿里云百炼 / 智谱开放平台 | 同上，选对应供应商填 Key | 同样便宜，适合批量 |
+
+---
+
+## 8. 开源模型与免费 API：想自己跑、想省钱时看这节
+
+| 模型 / 平台 | 官网 | 说明 | 推荐用法 |
+|---|---|---|---|
+| **Llama**（Meta） | llama.com / meta-llama | 开放权重，Scout / Maverick，100 万 - 1000 万上下文，权重免费（月活 7 亿以内） | 不用直接找 Meta 要 Key，用 Groq / Together / Fireworks 等第三方托管跑 |
+| **Qwen3.8**（阿里） | qwen.ai | 开源权重主力，Max 旗舰、27B 单卡可跑、Flash 便宜档 | 想本地跑、二次开发时选 27B |
+| **DeepSeek V4.1 Flash** | deepseek.com | 552B MoE、100 万上下文、MIT 开源权重 | 批量、审计、长尾任务 |
+| **Muse Spark Open**（Meta） | Meta 官网 | 开放权重（非严格开源）：816B 总参数 / 约 42B 激活、100 万上下文，需署名“Built with Muse Spark Open” | 本地满血需多卡/大内存，量化版仍需约 180GB 以上内存，多数人更现实的路径是第三方 API |
+| **Groq** | groq.com | 最快的开源模型推理，免费层慷慨 | 免费试 Llama、Qwen、Gemma 的首选 |
+| **Together AI** | together.ai | 托管 100+ 开源模型，新账户送 $5 免费额度 | 同上，备选 |
+| **OpenRouter 免费模型** | openrouter.ai | 轮换免费模型，一个 Key 接 300+ 模型 | 比较很多模型时用 |
+| **GitHub Models** | github.com/marketplace/models | 任何 GitHub 账号都能用免费 playground + API，含 GPT、Llama、Phi、Mistral | 有 GitHub 账号就能直接试，不用另开 Key |
+
+---
+
+## 9. 第三方接入：把 AI 接进钉钉 / 飞书 / 企业微信（重点，照着做）
+
+> 你问的“像钉钉/飞书这种第三方可以接入的 CLI 或者别的可以自动读取连接上 AI 的网页”，都在这节。核心就三句话：① 钉钉/飞书官方都开放了机器人 API，用 Stream 模式（WebSocket）不用公网 IP；② 不会代码先用 Linclaw / 原生智能伙伴，不用碰命令行；③ 会命令行再用 OpenClaw / Hermes。
+
+### 9.1 原生：不用装任何东西，直接在 App 里用
+
+| 平台 | 原生 AI 叫什么 | 官网 / 入口 | 功能 | 推荐用法 |
+|---|---|---|---|---|
+| **飞书** | **豆包工作伙伴**（原飞书 aily，8 月 14 日更名） | 飞书 App 里搜“豆包工作伙伴”；开放平台 open.feishu.cn | 不再是你打开的一个工具，而是进入你工作环境、就地协作、主动干活、24 小时在线的 AI 同事；支持接入符合要求的第三方 Agent 和企业自建 Agent，也提供专业 Agent；可组智能体团队，多 Agent 分工 | 已经在用飞书的团队直接用它。企业可配置谁能用、能用哪些能力、第三方智能体接入范围。云端持续工作为主、本机现场执行为辅 |
+| **钉钉** | **钉钉 AI 助手** | 钉钉 App 里；开放平台 open.dingtalk.com | 消息收发、待办管理、日程安排、审批流程、企业办公自动化 | 已经在用钉钉的团队直接用它。企业版需管理员审批 |
+| **企业微信** | 企业微信 AI 助手 | 企业微信管理后台 | 消息、审批、日程、客户联系 | 已经在用企业微信的团队用它，需管理员配置 |
+
+### 9.2 官方开放能力：Skill + MCP + CLI（给想自己接的人看）
+
+| 平台 | 开放形式 | 官方入口 | 说明 |
+|---|---|---|---|
+| **飞书** | Skill + MCP + CLI | open.feishu.cn | 支持 Skill、MCP、CLI 多种接入形式，其中 CLI 已于 2026 年 3 月开源。飞书机器人 API 官方开放，Stream 模式 WebSocket，企业版需管理员审批 |
+| **钉钉** | Skill + MCP + CLI | open.dingtalk.com | 同上，覆盖企业日常协作场景。核心逻辑：创建应用 → 添加机器人 → 配置 Stream 订阅 → 申请权限 → 发布版本。事件订阅必须选 Stream 模式（WebSocket），不要选 Webhook |
+| **企业微信** | 机器人 API + Webhook / WebSocket | 企业微信开放平台 | 官方开放，需管理员配置 |
+
+> 17 个国内 App 已有公开官方接入入口（Skill / MCP 等），飞书和钉钉是其中办公协作最全的两个。理论上只要客户端支持对应的 Skill 或 MCP 协议，并完成授权与配置，就可以接入 Grok Bot、OpenClaw、Muse 等工具。不同产品开放程度不同，部分能力需申请 API Key 或企业资质。
+
+### 9.3 接入工具：不会代码 vs 会命令行，分开选
+
+#### A. 不会代码，先用这个（双击安装，不用命令行）
+
+| 工具 | 官网 / 获取 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **Linclaw** ★不会代码首选 | 七牛云基于 OpenClaw 开源生态推出的桌面分发版，macOS DMG 或 Windows EXE，双击安装 | 原生支持 9 大渠道：微信、钉钉、飞书、QQ 等；内置 DeepSeek V3 / Kimi K2.5 / GLM-4.7 等国内主流模型，无需配置 Node.js 环境或命令行 | 个人 / 中小企业想把 AI 接进钉钉 / 飞书群，先装这个。场景：把 Linclaw 部署到钉钉 / 飞书企业群，结合 MCP 接内部知识库，员工 @ 机器人即可问政策文档和 FAQ，数据不出内网（支持私有部署 + 本地 Ollama） |
+| **FastGPT** | doc.fastgpt.cn | 开源 AI 知识库 + Agent 平台；商业版 4.8.10 起支持直接接入飞书机器人，无需额外 API | 已有知识库、想做企业问答机器人时用它。步骤：飞书开放平台创建企业自建应用 → 添加机器人 → 复制 App ID / App Secret → FastGPT 里发布渠道 → 飞书机器人 → 新增，填 App ID / App Secret，勾选“接收消息 v2.0”事件，发布后拉进群或私聊 |
+
+#### B. 会命令行 / 想深度定制，再用这个
+
+| 工具 | 官网 / 获取 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **OpenClaw** | github.com/openclaw/openclaw | 开源 Agent 框架，CLI 配置，一次部署、多平台接入；统一消息网关支持同一个 AI 助手同时在飞书、钉钉、企业微信三个群里响应，不同渠道上下文独立隔离 | 技术团队 / 深度定制。飞书接入：OpenClaw 从 2026.2.2 起内置飞书官方插件 `@openclaw/feishu`，用 WebSocket 长连接，无需公网 IP。步骤：open.feishu.cn → 创建企业自建应用 → `openclaw config set channels.feishu.appId "…"`。钉钉接入：open.dingtalk.com 创建企业内部应用，拿 Client ID / Client Secret，`openclaw config set channels.dingtalk.clientId "…"`，事件订阅选 Stream 模式 |
+| **Hermes Agent** | Hermes 官网 / GitHub | CLI Agent + Messaging Gateway，原生支持 QQ、微信、飞书、钉钉、企业微信、腾讯元宝等；Gateway 可同时加载多个 Adapter | 想 7×24 小时在线的私人 AI 助手时用。飞书支持私聊、群聊 @机器人、图片、音频、视频、文件、Thread、Cron 通知，WebSocket 模式，不用给 Hermes 准备公网 Webhook。配置：`hermes gateway setup` → 选 Feishu / Lark → 扫码创建或手动填 `FEISHU_APP_ID=cli_…` / `FEISHU_APP_SECRET=…`；钉钉同理填 `DINGTALK_CLIENT_ID` / `DINGTALK_CLIENT_SECRET` |
+| **QClaw / ArkClaw** | 腾讯 / 字节官方 | 平台原生 Agent，扫码激活，绑定各自平台 | 只用微信 / 抖音生态的人用对应那个，别跨平台硬接 |
+
+> ⚠️ 微信提醒：微信官方不开放机器人 API，所有微信机器人方案（包括 Linclaw / QClaw）均依赖非官方 Web 协议，封号风险真实存在。企业场景强烈建议钉钉或飞书的官方 Stream API，两者均有明确 SLA 保障。
+
+### 9.4 蚂蚁灵光 2.0：已经打通钉钉 / 飞书的现成 Agent
+
+- **发布时间**：2026 年 10 月 27 日
+- **定位**：从“回答问题”到“主动办事”的超级 Agent，授权后主动识别潜在需求、自主发起分析、监测和跟进
+- **已打通**：支付宝生态内账单、会员、出行数据，以及钉钉、飞书、邮箱、米家等外部服务
+- **开放调用**：支持在开放环境中调用 MCP、CLI 等工具，第三方 Agent 与服务可直接接入灵光的执行链路
+- **推荐用法**：家庭场景授权后关注钉钉班级群老师通知，整理重点、提取待办并完成文档排版；办公场景盯飞书 / 钉钉群里的待办和审批
+
+---
+
+## 10. 自动化 / 工作流：让 AI 自己跑流程
+
+| 工具 | 官网 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **n8n** | n8n.io | 开源自动化工作流，可接 400+ 应用，拖拽搭流程 | 想让 AI 定时跑任务、自动发通知、自动整理表格时用它，可自部署 |
+| **Dify** | dify.ai | 开源 LLM 应用开发平台，可搭 Agent、知识库、工作流 | 想自己搭一个企业问答助手时用它 |
+| **Coze / 扣子** | coze.cn | 字节的 Agent 搭建平台，拖拽搭机器人，可发布到飞书、钉钉、微信等 | 不会代码想快速搭一个群机器人时用它 |
+| **Zapier / Make** | zapier.com / make.com | 国外自动化平台，接 Gmail、Slack、Notion 等 | 国外生态自动化时用 |
+
+---
+
+## 11. 资料库 / 技能复用：别重复造轮子
+
+| 名称 | 官网 / 获取 | 功能 | 推荐用法 |
+|---|---|---|---|
+| **prompts.chat** | prompts.chat / github.com/f/prompts.chat | 提示词库，网站零安装版 + Windows D 盘自托管版 + MCP / Claude Code 插件接入 | 找提示词模板先来这。中文结构化模板配 LangGPT（langgptai/LangGPT） |
+| **LangGPT** | github.com/langgptai/LangGPT | 中文结构化提示词模板 | 写中文提示词时用它搭框架 |
+| **GitHub Skills（开源技能库）** | github.com | Anthropic 官方 Skills、Superpowers、data-analysis-skill、claude-office-skills、ui-ux-pro-max-skill、Context7 MCP、GitHub MCP Server、Playwright MCP 等 | 你已收录 8 个，见 `workspace/your_files/ai-landscape/开源技能库.md`，新技能先去那查有没有收录 |
+| **MCP 服务器合集** | mcp.so / GitHub 搜 “MCP Server” | 模型上下文协议服务器，接本地文件、数据库、浏览器等 | 想让 Claude / Codex 直接读你本地文件、查数据库时用 MCP |
+
+---
+
+## 12. 复制粘贴速查：你最常用的 10 个链接
+
+```text
+ChatGPT（主力）：https://chatgpt.com
+Claude：https://claude.ai
+Gemini：https://gemini.google.com
+Meta AI：https://meta.ai
+DeepSeek：https://deepseek.com
+Kimi：https://kimi.com
+豆包：https://doubao.com
+Cherry Studio 下载：https://cherryai.com/download
+Chatbox 网页版：https://web.chatboxai.app
+Groq 免费 Key：https://console.groq.com
+飞书开放平台：https://open.feishu.cn
+钉钉开放平台：https://open.dingtalk.com
+你的工具箱网页：https://dyixia67-art.github.io/my-ai-toolbox/
+你的仓库：https://github.com/dyixia67-art/my-ai-toolbox
+```
+
+---
+
+## 13. 怎么维护这份大全（每月 1 次，5 分钟）
+
+1. 每月 1 号上午，对照每晚 21:30 日报的「各家 AI 产品更新」，把停产、涨价、新模型、新地区开放这四类改掉。
+2. 新工具先试 1 个真实任务（一段 ESP-IDF 代码、一份技能说明、一次海报文案改写），好用再写进大全，不好用不写。
+3. 费用、地区、版本号以官网为准，变了就按页面走，别信二手转述。
+4. 这份文件本身也可以放进你的 GitHub 仓库 `my-ai-toolbox`：在仓库里点 **Add file → Upload files**，把这个 MD 传上去，以后在网页上也能查到。
+
+---
+来源（2026-11-17 核对）：2026-11-01 全景表 `workspace/your_files/ai-landscape/国内外热门AI全景.md`；11 月上旬核对：Gemini 4 Carbon 11 月 11 日开放、Claude Sheets / Whiteboards 11 月 10 日上线、ChatGPT Images 2.6、ChatGPT Wallet 11 月 13 日；钉钉/飞书接入：飞书开放平台 open.feishu.cn、钉钉开放平台 open.dingtalk.com、OpenClaw / Linclaw / Hermes / FastGPT 官方文档与 2026 年 5 月、9 月、11 月整理；聚合客户端：Cherry Studio v2.2.2（2026-11-13）、Chatbox 官网与 GitHub、Groq 免费层说明。模型名、额度、价格以你打开时页面显示为准。
