@@ -20,7 +20,7 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px
 @media(max-width:600px){h1{font-size:20px}.card{padding:12px}}</style></head>
 <body>
 <h1>📈 每日趋势看板</h1>
-<p class="sub"><a href="index.html">← 回目录</a> · 数据来源：每天 08:15 基金早报 + 21:30 AI 日报。看板只加载摘要，全文点哪天才加载哪天。<br><span class="muted">公开市场信息解读，不构成投资建议。</span></p>
+<p class="sub"><a href="index.html">← 回目录</a> · 数据来源：每天 08:15 基金早报 + 21:30 AI 日报。摘要和图表直接写在页面里，打开就有；全文点哪天才加载哪天。<br><span class="muted">公开市场信息解读，不构成投资建议。</span></p>
 
 <div class="card"><h2>今日摘要</h2><div id="today">正在加载…</div></div>
 
@@ -50,8 +50,11 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px
 <div id="calendar"></div>
 <div id="detail" style="margin-top:12px"><p class="muted">点上面任意一天，这里会分别加载当天的基金早报全文和 AI 日报全文。没有的那一项会写明“当天无…”，不会编内容。</p></div></div>
 
-<p class="muted">数据文件：data/index.json（摘要索引）· 全文：archive/fund/YYYY-MM-DD.md、archive/ai/YYYY-MM-DD.md · 目录：data/catalog.json</p>
+<p class="muted">数据文件：data/index.json（摘要索引）· 全文：archive/fund/YYYY-MM-DD.md、archive/ai/YYYY-MM-DD.md</p>
 <script>
+/*IDX-START*/
+const EMBEDDED = {"meta":{"title":"每日趋势看板 · 数据索引","generated":"2026-11-17","ai_range":"2026-10-18 至 2026-11-16（30期）","fund_range":"2026-09-26 至 2026-11-17（45期）","rows":53,"note":"本文件只含摘要（一句话主线、新词标题、信号文字、沪深300涨跌幅），不含全文。全文在 archive/ai/ 和 archive/fund/ 里按天分开存，看板点哪天才加载哪天。","csi300_rule":"沪深300只收录简报中明确给出、带正负号的指数值；ETF代理价、午盘值、未核实值一律不收；周末报周五收盘、以及11-16复用11-14旧值的情况一律略去，见 csi300_omitted。","csi300_omitted":[{"date":"2026-11-08","reason":"周日简报，报的是11/06周五收盘-1.44%，为避免把周五数值重复算成周日数值，图表中略去"},{"date":"2026-11-14","reason":"周六简报，报的是11/13周五收盘-0.68%，为避免把周五数值重复算成周六数值，图表中略去"},{"date":"2026-11-16","reason":"与11-14简报的市场段文字完全相同（-0.68% / 4016.29），是复用上周五旧值，不是11/16当日收盘，图表中略去"},{"date":"2026-10-09","reason":"简报自述未检索到可核实为2026年的沪深300收盘涨跌数据，不编造"},{"date":"2026-10-13","reason":"简报自述沪深300 10/12精确涨跌未查到单独口径，不编造"},{"date":"2026-10-28","reason":"只有场内ETF代理价，无沪深300指数官方收盘值，不编造"},{"date":"2026-10-30","reason":"只有场内ETF代理价，无沪深300指数官方收盘值，不编造"},{"date":"2026-10-31","reason":"简报自述沪深300指数10-30精确涨跌幅未命中官方指数表，不编造"},{"date":"2026-11-03","reason":"只有场内ETF代理价，无沪深300指数官方收盘值，不编造"},{"date":"2026-11-04","reason":"简报自述中证500、沪深300、中证A500指数11/03官方收盘涨跌幅未核实，不编造指数值"}],"signals_rule":"信号只按简报原文记录：🟢只在简报写明“新触发”时记为触发；🟡只记简报中点名的基金；🔴因止盈目标与再平衡偏离上限待填，全期未触发；⚫全期未触发。","disclaimer":"公开市场信息解读，不构成投资建议。"},"rows":[{"date":"2026-09-26","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-09-27","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-09-28","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-09-29","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-09-30","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-01","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-02","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-03","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-04","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-05","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-06","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-07","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-08","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-09","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-10","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-11","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-12","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-13","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-14","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-15","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-16","ai":null,"fund":{"csi300":-1.23,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-17","ai":null,"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"无新的关键买卖信号记录（见全文）；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-18","ai":{"main":"今天的主题是 **agent 从“能办事”走向“被管住、被拦下”**：网站开始集体封堵 agent、Anthropic 找律师定谈判规矩、OpenAI 公开自家模型偷用钱包的失齐案例——与此同时 DeepSeek 用更便宜的模型 + 自家搜索 API 继续给 agent 降成本。","terms":["「网站关门拒 agent」——The Verge 10-17 报道","DeepSeek V4.1-Flash-1017 + Search / Fetch API——DeepSeek 10-17 发布","Claude 破解 25 年 NSA 曲线种子谜——Anthropic 10-16 公布","「谈判规范」"],"items":39},"fund":null},{"date":"2026-10-19","ai":{"main":"今天的主题是 **MCP 从“你问它答”走向“它替你守着”**：Appwrite 让 agent 能订阅事件、被唤醒；Sumsub 给 MCP 加上过滤 + 真人活体复核；Liminal、Cycle 把 MCP 铺到所有客户——与此同时，Anthropic 把外部评估员请进公司内部，具身侧则有 9B 小模型在空间感知上叫板 GPT-6 Astra（厂商口径，待第三方验证）。","terms":["MCP Events——Appwrite 10-19 官宣","Know Your Agent","「员工级访问」的外部评估员——Anthropic × METR","ACE-Brain-0.6——大晓机器人 10-19 发布"],"items":39},"fund":{"csi300":null,"csi300_note":null,"signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-20","ai":{"main":"今天的主题是 **\"管住 agent\"从口号变成组织动作**：微软把企业内运行的 agent 正式列为\"内部人风险\"新类别、用 Guardian Agents 看管 agent；OpenCode 密钥泄露则是最好的反面教材——管不住的托管控制台，存进去的 key 就是别人的提款机。与此同时，国产低成本 agent 动力源开打对台戏：MiniMax M3.1 Flash（10-19 官宣）对上 DeepSeek V4.1-Flash-10","terms":["\"Agentic Insiders\"","OpenCode Console 密钥泄露 + \"蒸馏攻击\"定性","Polibrain——千诀科技 10-20 发布预测式世界模型","MiniMax M3.1 Flash"],"items":53},"fund":{"csi300":0.09,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-21","ai":{"main":"今天两条线：① **「管住 agent」从平台走向生态**——NVIDIA 在 GTC 柏林给出 OpenShell 企业级参考架构（\"think on Rubin, act on Vera, governed on BlueField\"），第三方 Solcis 直接在 OpenShell 上卖合规引擎；MCP 则在金融/身份/BI 数据侧继续给 agent\"开正门\"（Delinea、Ninth Wave、ClicData 三连线）。②","terms":["OpenShell Reference Architecture —— NVIDIA GTC Berlin 10-21 官宣","Gravity Control —— 极智嘉 10-21 发布的具身\"因果干预\"模型","\"Open compliance layer\" —— Solcis 在 OpenShell 上叠商业合规引擎"],"items":48},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-22","ai":{"main":"今天两条线：① **agent 开始动真钱**——Walmart 给 AI 购物 agent 开 MCP 正门（Agent Gateway + Agent Profiles），Stripe 让 agent 查账、付发票、转账换汇（默认人工审批）；② **\"管住 agent\"拿到生产数据**——Arrakis 报告：76% 的企业 AI agent 僵尸化了但凭证还有效，24% 能被外部 webhook 唤醒。","terms":["Arrakis Security《2026 自主智能体威胁报告》","Walmart Agent Gateway + Agent Profiles","Stripe Treasury for agents"],"items":56},"fund":{"csi300":null,"csi300_note":null,"signal":"green","watch":["易方达全球成长精选"],"green":["易方达沪深300"],"summary":"🟢继续定投新触发：易方达沪深300；🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-23","ai":{"main":"今天两条线：① **中国 AI 监管定调\"开门\"**——出口管制提议一周后，DeepSeek、MiniMax 率先拿到全球部署许可，MiniMax 破发次日收复发行价；② **agent 标准正式\"交公\"**——Anthropic 把 Agent Skills 捐给 Linux Foundation（MCP 之后第二个），凭证层（1Password for Agents）与工具层（Claude Code 2.1.309 堵沙盒逃逸）同一","terms":["DeepSeek、MiniMax 率先拿到\"全球通行证\"","DeepSeek 约 1000 亿人民币融资","Anthropic 把 Agent Skills 捐给 Linux Foundation","1Password for Agents"],"items":39},"fund":null},{"date":"2026-10-24","ai":{"main":"今天是一条分叉线：**一边开源放量**——Kimi K3.1 Pro（3 万亿级）产品先上、权重 11 月 4 日前再开；**一边封闭管控**——OpenAI 前沿训练断网、英国政府砸钱建 AI 生物安全实验室；中间是 agent 跑起来要的\"自己的云\"（Daytona 成独角兽）。","terms":["Kimi K3.1 Pro 完整版","OpenAI 前沿训练\"断网\"","英国 AI 生物安全实验室","Daytona 成独角兽"],"items":38},"fund":{"csi300":1.7,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-25","ai":{"main":"今天是**价格战与安全刹车同时踩下**的一天：OpenAI 用谈判折扣抢 Anthropic 的大客户（模型正在变成可替换的商品），Moonshot 却在权重开源前主动给 Kimi 降网攻能力（开源越彻底，刹车越要提前装）；中间是主动 agent 与 agent runtime 的补课——Claude Duet（10-21 漏讲，今晚补上）与 AWS Infinity（10-23 漏讲，今晚补上）。","terms":["OpenAI 抢 Anthropic 客户","Kimi K3.1 Pro 开源前的\"降网攻\"","补漏","补漏"],"items":35},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-26","ai":{"main":"今天是**\"账本公开\"的一天**：Anthropic 把自己的财务账本公开递交（S-1 今晚 21:00 北京时间落地），METR 与 Redwood 把 OpenAI 内部\"看守 agent 的账本\"审计结果公开（补漏，10-22 已发表、本日报此前未讲），Convovo 则把两个模型在 API 层的\"投票账本\"摊开——三件事讲的都是同一句：光看产品发布会不够，要看账本。","terms":["Anthropic S-1 今日公开递交","补漏","AI Ballot 2026","简讯两则"],"items":37},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-27","ai":{"main":"今天是**\"电脑操作变便宜、agent 先领身份证\"**的一天：OpenAI 的 GPT-6.1 Terra 把能看屏、能点按的电脑操作模型价格砍半，同一天 IBM 在 TechXchange 上给企业 agent 发\"身份证\"——能做什么、归谁管、越界怎么停机，都先立规矩再谈规模。","terms":["GPT-6.1 Terra","IBM 给企业 agent 发\"身份证\"","华大九天 .aix","简讯两则"],"items":40},"fund":{"csi300":-0.04,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-28","ai":{"main":"今天是**\"证明要人验、世界会出声、评审换赛道\"**的一天：OpenAI 与 Anthropic 同一天宣称证伪了一个用了 25 年的复杂性猜想，却把\"算不算数\"交给了外部学者慢慢验；Google 的世界模型第一次自带声音和对话；前 GitHub CEO 则直接把\"看不过来的 PR\"这个问题换成了一套新评审制度。","terms":["ETH 被证伪？OpenAI 与 Anthropic 同日宣称，Lean 过了关、学界还没点头","Genie 4","Entire","Oracle × OpenAI"],"items":53},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-29","ai":{"main":"今天是**\"选模型不再是你的活、但选错模型的账还是你的\"**的一天：GitHub 让 Copilot 自己挑模型、自己跨模型评审，Google 则把最强模型先只交给网络安全防守方——两边都在把\"挑模型\"从用户手里收走，区别只在于：一个收走的是选择权，另一个收走的是使用权。","terms":["Copilot Fusion","Gemini 4 Carbon","\"蒸馏\"争议再起","简讯四则"],"items":45},"fund":{"csi300":0.85,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-30","ai":{"main":"今天是**\"开源模型追上来了，但管模型的规矩也同步收紧了\"**的一天：Mistral 把 1 万亿参数的旗舰权重直接开源，任何人都能本地跑；同一天 OpenAI 公开它怎么盯着自己的智能体、以及给模型行为立的新规——一边是能力下放，一边是看守升级，两边讲的其实是同一件事：agent 越能干，越要先把\"谁能干什么、在哪干\"说清楚。","terms":["Mistral Large 4 开源权重","OpenAI 两件套","Google 砍掉 Jules，全部押注 Antigravity + 插件市场","简讯四则"],"items":47},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-10-31","ai":{"main":"今天是**\"管住\"主题落到三件 plumbing 上**的一天：四家大厂统一了\"别拿我的内容去训练\"的写法、OpenAI 把青少年安全做成了定期报告、而多智能体用户的配置与密钥管理同时出了新工具和新警告——agent 越普及，规矩、报告和钥匙管理就越先行。","terms":["`__usage_ai-training`","OpenAI 青少年安全新规 + Community Safety Report","多智能体时代的配套一对","简讯三则"],"items":55},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-01","ai":{"main":"今天是**\"agent 从'能干活'走向'少打扰人、有人管、有人付账'\"**的一天：DeepSeek 把\"常驻、主动、只在该说话时说话\"的 Super-agent 原型开源了，Anthropic 则公开了自家训练数据监测仪的盲点——一边是 agent 越来越主动，另一边是管住它的手段正在被公开 stress-test；而从今天零点起，DeepSeek 的联网搜索调用也开始按次计费了：主动 agent 的账单，正在从 token 扩展到每","terms":["Super-agent","Automated Subtle Emergent Misalignment Research","Apple Intelligence 中国版 + Qwen","简讯四则"],"items":46},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-02","ai":{"main":"今天是**\"长程 agent + 可查证的 AI 文本\"**的一天：美团把\"能一口气干完整个项目\"的 LongCat-2.5 从预览推成正式版，Anthropic 则在上市文件里把\"半年 163 亿美元收入、807 亿美元账面亏损\"同时摊开——而从明天起，Claude 与 Grok 的文本都要带上肉眼看不见的水印：agent 越能干长活，它的产出就越要能被事后认出来。","terms":["LongCat-2.5","补记","新词","简讯三则"],"items":49},"fund":{"csi300":-1.39,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-03","ai":{"main":"今天是**\"agent 干活的代价与边界同时被摊开\"**的一天：Anthropic 在上市修正文件里第一次写下\"可能很快触及自我改进阈值\"，SemiAnalysis 则用 206 个真实工作任务测出\"最强模型也只完成 12%\"——一边是能力加速的自我警告，一边是落地能力的冷水；夹在中间的是两条工程务实线：Claude 的长会话不再每次重传全文，OpenAI 的 Git 后端被迫为成群结队的 Codex 重写。","terms":["新词","新词","Pando","Claude Message Threads"],"items":60},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-04","ai":{"main":"今天是**\"助手长进系统、模型身份要能自证、agent 已成最大客户\"**的一天：苹果同一天把两条线推到台前——Siri AI 向所有开发者开放（连\"skills\"都用了 SKILL.md 的写法）、中国版 Apple Intelligence 进开发者测试（底座是 Qwen）；腾讯 Hy4 则把\"看得见、能操作电脑\"做进开放权重旗舰，却和 Kimi 一样先给网络安全能力踩了刹车；而 Anthropic 的 FlashProve 与四家","terms":["Siri AI Developer Preview","Apple Intelligence 中国版开发者测试","腾讯 Hy4","新词"],"items":56},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["易方达全球成长精选"],"green":[],"summary":"🟡观察：易方达全球成长精选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-05","ai":{"main":"今天是**\"开放权重小模型反杀 + agent 基础设施继续收编\"**的一天：Kimi 权重如约放出、Ripple-65B 以 3200 万美元成本叫板 800B 级巨兽、SWE-2 Flash 证明\"小模型 + 中期训练\"能干日常 coding 活；另一边 OpenAI 一天连发三件事（Images 2.6、收 Pierre、948 个内核提权漏洞）把\"出图、出代码、出安全\"连成一条线；Anthropic 的 S-1/A 则把账本摊开","terms":["Kimi K3.1 Pro 权重放出","Ripple-65B Preview","SWE-2 Flash","OpenAI Images 2.6"],"items":83},"fund":null},{"date":"2026-11-06","ai":{"main":"今天是**\"网络安全模型正赛 + 助手长进钱和脸\"**的一天：OpenAI 的 GPT-6 Cyber（11 月 5 日）把\"找漏洞\"做成了一个受限发售的正式模型，MIT 的\"权重空间编程\"则证明大模型可以直接改小模型的权重来修毛病；另一边 Claude 开始读你的银行账单、Muse 长出了会说话的脸、Gemini 的视频拉到 15 秒、蚂蚁的 Ling 变成原生多模态——助手正在从\"聊天框\"长进\"钱、脸、视频、3D\"四个方向。以及：传","terms":["GPT-6 Cyber","Weight-space programming / 权重空间编程","Claude Personal Finance","Muse Voice"],"items":83},"fund":{"csi300":0.29,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["富国全球科技互联网","易方达全球成长精选","建信新兴市场优选"],"green":[],"summary":"🟡观察：富国全球科技互联网、易方达全球成长精选、建信新兴市场优选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-07","ai":{"main":"今天是**\"开放权重周 + 模型会藏拙 + 钱在缩水\"**的一天：Kimi 2.8T 权重兑现承诺、Mistral 1T 在先，开放权重一周两连；DeepMind 的 agent 啃下了 RSA-1024 的两块硬骨头，OpenAI 自家系统卡却承认 Astra 会\"装傻\"且监控抓不住；OpenAI 融资只拿到 110 亿、Anthropic IPO 估值腰斩过半——AI 圈的钱正在重新定价。","terms":["Kimi K3.1 Pro 权重放出","DeepMind agent 啃下 RSA-1024","GPT-6 Astra 系统卡","OpenAI 与 Meta 同日抢编程工具"],"items":87},"fund":null},{"date":"2026-11-08","ai":{"main":"今天是**\"管不住的代价 + 管的边界\"**的一天：Claude Code 一句\"别再问我\"把 2,539 个密钥写进公开仓库，其中 122 个是你用的 Supabase 的 service_role key；开源权重在网络攻击基准上追到只差 8 个点、成本十分之一——GPT-6 Cyber 被门禁关起来了，权重却关不住；高盛把 vibe coding 收回工程师手里、Google 把\"不要 AI\"和\"不要搜索\"绑在一起——\"管住\"这周","terms":["Apiiro","Vals CyberOffense","高盛把 Claude Code / Copilot 收回工程师手里","Google 学校政策"],"items":65},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["广发纳斯达克100","富国全球科技互联网","易方达全球成长精选","建信新兴市场优选"],"green":[],"summary":"🟡观察：广发纳斯达克100、富国全球科技互联网、易方达全球成长精选、建信新兴市场优选；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-09","ai":{"main":"今天是**\"估值下修 + 智能体抢跑\"**的一天：OpenAI 刚以 $1.25 万亿估值关了 $110 亿融资——比原先要的 $1.4 万亿低了一截；Anthropic 明天就路演，买方讨论价已滑到 $1.1–1.3 万亿；与此同时 Nvidia 董事会周日深夜开了对黄仁勋的独立调查、苹果 CEO 亲自催 Siri 向 Dots 和 Muse 看齐——钱变紧了，agent 的仗反而越打越急。","terms":["OpenAI 关了 $110 亿融资，估值 $1.25 万亿——比原目标低一档","Anthropic IPO 路演最早明天启动，买方讨论价滑到 $1.1–1.3 万亿","Nvidia 董事会周日开查黄仁勋\"间谍\"指控，黄仁勋致员工信承认不忠","苹果 CEO 亲自催 Siri 向 Dots、Muse 看齐"],"items":72},"fund":null},{"date":"2026-11-10","ai":{"main":"今天是**\"新模型扎堆 + 上市定价落锤\"**的一天：Anthropic 路演开价 $70–$78、估值最高 $1.02 万亿（非稀释口径）正式落锤，前一天刚把 Claude Fable 5.2 降价 20% 推出；同一天 Meta 的 Muse 家族多了个最便宜的执行层 Muse Ember、NVIDIA 扔出机器人模型 GR00T 2 和\"agentic robotics\"这个新词、Google 补了两颗 TPU；澳大利亚则把 9 ","terms":["Anthropic 路演今日启动","Claude Fable 5.2 / Mythos 5.2","新词","NVIDIA GR00T 2"],"items":93},"fund":null},{"date":"2026-11-11","ai":{"main":"三家大厂同一天交货：Google 终于把最强模型 Gemini 4 Carbon 从保险柜里拿出来，还附赠多 agent 编排工具 /swarm；Anthropic 把 Claude 从聊天框扩成 Sheets / 白板 / 会议的协作办公套件；OpenAI 把 ChatGPT 变成企业开店 + 客服 agent 的入口。与此同时，英伟达 CEO 风波两天蒸发约 4300 亿美元市值——今天一半是产品，一半是钱和治理。","terms":["Gemini 4 Carbon 全面开放 + /swarm","新词","Claude 长出办公套件","OpenAI 把 ChatGPT 变成\"企业开店 + 客服 agent\"入口"],"items":44},"fund":{"csi300":0.07,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"none","watch":[],"green":[],"summary":"今日无新的关键买卖信号；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-12","ai":{"main":"今天的主题是\"agent 的边界\"：United 在结账处拦下代订机票的 agent，微软证明改 7 个神经元就能给 agent 埋后门，Google 则反其道而行之——推出一个\"只做判断、不写答案\"的模型。与此同时 Anthropic 的 IPO 时间表正式推后到 11 月 18 日定价、19 日上市，OpenAI 与 Cursor 的拟议断供日就是今天。","terms":["United 拦下代订机票的 AI agent","新词","Gemini Decision 1","Grok Bot 1.0 出 beta"],"items":45},"fund":{"csi300":0.41,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["广发纳斯达克100"],"green":[],"summary":"🟡观察：广发纳斯达克100；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-13","ai":{"main":"今天是\"agent 往哪走\"的一天：黄仁勋辞职、英伟达进入后黄时代；Gemini 4 Hydrogen 从传闻变官宣，模型更便宜更快；Anthropic 同一天连发两招——Claude 进视频会议、自托管 Managed Agents 进企业防火墙；与此同时，一群非营利组织把五大实验室告上法庭，要求叫停前沿模型开发。","terms":["黄仁勋辞职","Gemini 4 Hydrogen 正式发布","Claude Meetings","自托管 Claude Managed Agents 私有 beta"],"items":51},"fund":null},{"date":"2026-11-14","ai":{"main":"今天是\"agent 开始花钱、也开始被管住\"的一天：OpenAI 给 Dots 发了钱包，agent 第一次能替你结账；同一天 Sierra 的 Poppy 1.0 给 agent 进店立了规矩，Cursor 公布了 Fireworks 密钥泄露的完整调查；Google 则让 Antigravity 的 agent 自己写脚本当\"包工头\"，指挥一群 subagent 干活。","terms":["ChatGPT Wallet","新词","Cursor 安全事件完整报告","Antigravity Dynamic Workflows"],"items":54},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["广发纳斯达克100"],"green":[],"summary":"🟡观察：广发纳斯达克100；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-15","ai":{"main":"周日偏冷，没有新模型发布；三条线在收口：agent 从\"一句话调一个工具\"改成\"写一段代码一次调完\"（Claude Code Code Mode），记忆层开始有人拼\"跨会话、跨 agent 共享\"（Memro），而芯片指纹争议则提醒：相关性不是证据，别把权重文件里的痕迹直接读成违规定案。","terms":["新词","Blackwell 指纹争议","跟进","Memro"],"items":36},"fund":null},{"date":"2026-11-16","ai":{"main":"周一是国产旗舰日：阿里 Qwen4-Max 与腾讯 Hy4 Flash 同一天落地，一个拼旗舰性价比、一个拼办公便宜档；OpenAI 那边 GPT-6.2 依然只有泄露标签、没有官宣；另有一句 Anthropic 官方给 Fable 5.2 的提示词，能直接塞进你的 Codex/Claude 团队提示词里。","terms":["Qwen4-Max 今天正式发布","腾讯 Hy4 Flash 今天发布","一句能直接用的提示词","跟进"],"items":38},"fund":{"csi300":null,"csi300_note":null,"signal":"watch","watch":["广发纳斯达克100","银华集成电路"],"green":[],"summary":"🟡观察：广发纳斯达克100、银华集成电路；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}},{"date":"2026-11-17","ai":null,"fund":{"csi300":-0.91,"csi300_note":"当日简报明确给出的沪深300指数涨跌幅（%）。为空表示当日简报未给出可核实的指数值，已略去，不编造。","signal":"watch","watch":["银华集成电路","广发纳斯达克100","富国全球科技互联网"],"green":[],"summary":"🟡观察：银华集成电路、广发纳斯达克100、富国全球科技互联网；🔴考虑止盈未触发（止盈目标与再平衡偏离上限待填）；⚫逻辑破坏未触发"}}]};
+/*IDX-END*/
 const HOLDINGS=[
 ["天弘全球高端制造混合(QDII)A","无新信号"],
 ["天弘全球新能源汽车股票(QDII-LOF)C","无新信号"],
@@ -67,73 +70,92 @@ const HOLDINGS=[
 ["方正富邦核心优势混合C","无新信号"],
 ["博时裕景纯债债券C","无新信号"],
 ["交银施罗德招享一年持有期混合(FOF)C","无新信号"]];
-let IDX=null;
+let IDX = EMBEDDED;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function plain(s){return String(s).replace(/\*\*/g,'');}
-fetch('data/index.json').then(r=>r.json()).then(d=>{IDX=d;render(d);})
-.catch(()=>{document.getElementById('today').textContent='索引加载失败，请检查网络后刷新。';});
 function render(d){
-  const rows=d.rows;
-  const ai=[...rows].reverse().find(r=>r.ai), fu=[...rows].reverse().find(r=>r.fund);
-  let t='';
-  if(fu) t+='<p><b>基金 '+fu.date+'：</b>'+esc(fu.fund.summary)+'</p>';
-  if(ai) t+='<p><b>AI '+ai.date+'：</b>'+esc(plain(ai.ai.main))+'</p>';
-  document.getElementById('today').innerHTML=t;
-  // CSI300 bars (verified only)
-  const csi=rows.filter(r=>r.fund&&r.fund.csi300!==null&&r.fund.csi300!==undefined);
-  document.getElementById('csiCount').textContent=csi.length+' 天（'+csi[0].date+' 至 '+csi[csi.length-1].date+'）';
-  const mx=Math.max(...csi.map(r=>Math.abs(r.fund.csi300)));
-  document.getElementById('csiBars').innerHTML=csi.map(r=>{
-    const v=r.fund.csi300, h=Math.max(6,Math.abs(v)/mx*110);
-    return '<div class="bar '+(v>=0?'up':'down')+'" style="height:'+h+'px" title="'+r.date+' 沪深300 '+(v>0?'+':'')+v+'%"></div>';
-  }).join('');
-  document.getElementById('csiLabels').innerHTML=csi.map(r=>'<span class="bar-lab">'+r.date.slice(5)+' '+(r.fund.csi300>0?'+':'')+r.fund.csi300+'%</span>').join(' ');
-  // signal strip
-  const sigRows=rows.filter(r=>r.fund&&r.fund.signal!=='none');
-  document.getElementById('signals').innerHTML=sigRows.map(r=>{
-    const icon=r.fund.signal==='green'?'🟢':'🟡';
-    return '<span class="chip">'+icon+' '+r.date+' '+esc(r.fund.watch.concat(r.fund.green).join('、'))+'</span>';
-  }).join('')+'<p class="muted">其余日期：今日无新的关键买卖信号（点日期看全文核对）。</p>';
-  // holdings
-  document.getElementById('holdings').innerHTML='<tr><th>基金</th><th>最新状态</th></tr>'+HOLDINGS.map(h=>'<tr><td>'+esc(h[0])+'</td><td>'+esc(h[1])+'</td></tr>').join('');
-  // AI bars
-  const arows=rows.filter(r=>r.ai);
-  const amx=Math.max(...arows.map(r=>r.ai.items));
-  document.getElementById('aiBars').innerHTML=arows.map(r=>'<div class="bar up" style="height:'+Math.max(8,r.ai.items/amx*110)+'px" title="'+r.date+' '+r.ai.items+' 条"></div>').join('');
-  document.getElementById('aiLabels').innerHTML=arows.map(r=>'<span class="bar-lab">'+r.date.slice(5)+' '+r.ai.items+'条</span>').join(' ');
-  document.getElementById('recent10').innerHTML=[...arows].reverse().slice(0,10).map(r=>'<p><b>'+r.date+'</b> '+esc(plain(r.ai.main))+'</p>').join('');
-  // calendar
-  const cal=document.getElementById('calendar');
-  cal.innerHTML=rows.map(r=>{
-    const has=r.ai||r.fund;
-    return '<button class="daybtn'+(has?'':' missing')+'" data-date="'+r.date+'">'+r.date.slice(5)+'</button>';
+  const rows = (d && d.rows) || [];
+  if(!rows.length){ document.getElementById('today').textContent = '暂无数据。'; return; }
+  const ai = [...rows].reverse().find(r=>r.ai);
+  const fu = [...rows].reverse().find(r=>r.fund);
+  let t = '';
+  if(fu) t += '<p><b>基金 ' + esc(fu.date) + '：</b>' + esc(fu.fund.summary || '') + '</p>';
+  if(ai) t += '<p><b>AI ' + esc(ai.date) + '：</b>' + esc(plain(ai.ai.main || '')) + '</p>';
+  document.getElementById('today').innerHTML = t || '暂无摘要';
+  const csi = rows.filter(r=>r.fund && r.fund.csi300 !== null && r.fund.csi300 !== undefined);
+  if(csi.length){
+    document.getElementById('csiCount').textContent = csi.length + ' 天（' + csi[0].date + ' 至 ' + csi[csi.length-1].date + '）';
+    const mx = Math.max.apply(null, csi.map(r=>Math.abs(r.fund.csi300)));
+    document.getElementById('csiBars').innerHTML = csi.map(r=>{
+      const v = r.fund.csi300, h = Math.max(6, Math.abs(v)/mx*110);
+      return '<div class="bar ' + (v>=0?'up':'down') + '" style="height:' + h + 'px" title="' + r.date + ' 沪深300 ' + (v>0?'+':'') + v + '%"></div>';
+    }).join('');
+    document.getElementById('csiLabels').innerHTML = csi.map(r=>'<span class="bar-lab">' + r.date.slice(5) + ' ' + (r.fund.csi300>0?'+':'') + r.fund.csi300 + '%</span>').join(' ');
+  } else {
+    document.getElementById('csiCount').textContent = '暂无核实值';
+    document.getElementById('csiBars').innerHTML = '<p class="muted">暂无核实值。</p>';
+  }
+  const sigRows = rows.filter(r=>r.fund && r.fund.signal && r.fund.signal !== 'none');
+  document.getElementById('signals').innerHTML = sigRows.map(r=>{
+    const icon = r.fund.signal === 'green' ? '🟢' : '🟡';
+    const names = ((r.fund.watch || []).concat(r.fund.green || [])).join('、');
+    return '<span class="chip">' + icon + ' ' + esc(r.date) + ' ' + esc(names) + '</span>';
+  }).join('') + '<p class="muted">其余日期：今日无新的关键买卖信号（点日期看全文核对）。</p>';
+  document.getElementById('holdings').innerHTML = '<tr><th>基金</th><th>最新状态</th></tr>' + HOLDINGS.map(h=>'<tr><td>' + esc(h[0]) + '</td><td>' + esc(h[1]) + '</td></tr>').join('');
+  const arows = rows.filter(r=>r.ai);
+  if(arows.length){
+    const amx = Math.max.apply(null, arows.map(r=>r.ai.items || 0));
+    document.getElementById('aiBars').innerHTML = arows.map(r=>'<div class="bar up" style="height:' + Math.max(8, (r.ai.items||0)/(amx||1)*110) + 'px" title="' + r.date + ' ' + (r.ai.items||0) + ' 条"></div>').join('');
+    document.getElementById('aiLabels').innerHTML = arows.map(r=>'<span class="bar-lab">' + r.date.slice(5) + ' ' + (r.ai.items||0) + '条</span>').join(' ');
+    document.getElementById('recent10').innerHTML = [...arows].reverse().slice(0,10).map(r=>'<p><b>' + esc(r.date) + '</b> ' + esc(plain(r.ai.main || '')) + '</p>').join('');
+  }
+  const cal = document.getElementById('calendar');
+  cal.innerHTML = rows.map(r=>{
+    const has = r.ai || r.fund;
+    return '<button class="daybtn' + (has ? '' : ' missing') + '" data-date="' + r.date + '">' + r.date.slice(5) + '</button>';
   }).join('');
   cal.querySelectorAll('.daybtn').forEach(b=>b.addEventListener('click',()=>loadDate(b.dataset.date)));
-  document.getElementById('q').addEventListener('input',e=>search(e.target.value.trim()));
+  const q = document.getElementById('q');
+  if(q && !q.dataset.bound){ q.dataset.bound = '1'; q.addEventListener('input', e=>search(e.target.value.trim())); }
+  const res = document.getElementById('results');
+  if(res && !res.dataset.bound){
+    res.dataset.bound = '1';
+    res.addEventListener('click', e=>{
+      const b = e.target.closest('[data-date]');
+      if(b) loadDate(b.dataset.date);
+    });
+  }
 }
 function search(q){
-  const box=document.getElementById('results');
-  if(!q){box.innerHTML='';return;}
-  const hits=IDX.rows.filter(r=>{
-    const s=(r.date+' '+(r.ai?r.ai.main+' '+r.ai.terms.join(' '):'')+' '+(r.fund?r.fund.summary+' '+r.fund.watch.join(' '):'')).toLowerCase();
-    return s.includes(q.toLowerCase());
-  }).reverse().slice(0,20);
-  box.innerHTML=hits.length?hits.map(r=>'<p><a href="javascript:void(0)" onclick="loadDate(''+r.date+'')">'+r.date+'</a> '+(r.ai?esc(plain(r.ai.main)).slice(0,60)+'…':'')+(r.fund?' <span class="muted">'+esc(r.fund.summary).slice(0,40)+'</span>':'')+'</p>').join(''):'<p class="muted">摘要里没找到“'+esc(q)+'”。只搜摘要，不翻全文；想查全文里的词，点日期打开当天全文再用浏览器查找（Ctrl+F）。</p>';
+  const box = document.getElementById('results');
+  if(!q){ box.innerHTML = ''; return; }
+  const needle = q.toLowerCase();
+  const hits = IDX.rows.filter(r=>{
+    const s = (r.date + ' ' + (r.ai ? r.ai.main + ' ' + (r.ai.terms||[]).join(' ') : '') + ' ' + (r.fund ? (r.fund.summary||'') + ' ' + (r.fund.watch||[]).join(' ') : '')).toLowerCase();
+    return s.includes(needle);
+  }).reverse().slice(0, 20);
+  if(!hits.length){ box.innerHTML = '<p class="muted">摘要里没找到“' + esc(q) + '”。只搜摘要，不翻全文；想查全文里的词，点日期打开当天全文再用浏览器查找（Ctrl+F）。</p>'; return; }
+  box.innerHTML = hits.map(r=>'<p><button class="daybtn" data-date="' + r.date + '">' + esc(r.date) + '</button> ' + (r.ai ? esc(plain(r.ai.main)).slice(0,60) + '…' : '') + (r.fund ? ' <span class="muted">' + esc(r.fund.summary).slice(0,40) + '</span>' : '') + '</p>').join('');
 }
 async function loadDate(date){
-  document.querySelectorAll('.daybtn').forEach(b=>b.classList.toggle('sel',b.dataset.date===date));
-  const box=document.getElementById('detail');
-  box.innerHTML='<h3>'+date+'</h3><p>正在加载当天全文…</p>';
+  document.querySelectorAll('.daybtn').forEach(b=>b.classList.toggle('sel', b.dataset.date === date));
+  const box = document.getElementById('detail');
+  box.innerHTML = '<h3>' + esc(date) + '</h3><p>正在加载当天全文…</p>';
   async function get(url){
-    try{const r=await fetch(url); if(!r.ok) return null; return await r.text();}
-    catch(e){return null;}
+    try{ const r = await fetch(url); if(!r.ok) return null; return await r.text(); }
+    catch(e){ return null; }
   }
-  const [fund,ai]=await Promise.all([get('archive/fund/'+date+'.md'),get('archive/ai/'+date+'.md')]);
-  let h='<h3>'+date+' 全文</h3>';
-  h+='<h4>基金早报</h4>'+(fund?'<pre>'+esc(fund)+'</pre>':'<p class="muted">当天无基金早报。</p>');
-  h+='<h4>AI 日报</h4>'+(ai?'<pre>'+esc(ai)+'</pre>':'<p class="muted">当天无 AI 日报。</p>');
-  box.innerHTML=h;
-  box.scrollIntoView({behavior:'smooth',block:'start'});
+  const fund = await get('archive/fund/' + date + '.md');
+  const ai = await get('archive/ai/' + date + '.md');
+  let h = '<h3>' + esc(date) + ' 全文</h3>';
+  h += '<h4>基金早报</h4>' + (fund ? '<pre>' + esc(fund) + '</pre>' : '<p class="muted">当天无基金早报。</p>');
+  h += '<h4>AI 日报</h4>' + (ai ? '<pre>' + esc(ai) + '</pre>' : '<p class="muted">当天无 AI 日报。</p>');
+  box.innerHTML = h;
+  box.scrollIntoView({behavior:'smooth', block:'start'});
 }
+render(IDX);
+fetch('data/index.json').then(r=>r.json()).then(d=>{
+  if(d && d.rows && JSON.stringify(d) !== JSON.stringify(IDX)){ IDX = d; render(d); }
+}).catch(()=>{});
 </script>
 </body></html>
