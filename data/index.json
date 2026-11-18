@@ -2,7 +2,7 @@
  "meta": {
   "title": "每日趋势看板 · 数据索引",
   "generated": "2026-11-18",
-  "ai_range": "2026-10-18 至 2026-11-17（31期）",
+  "ai_range": "2026-10-18 至 2026-11-18（32期）",
   "fund_range": "2026-09-26 至 2026-11-18（46期）",
   "rows": 54,
   "note": "本文件只含摘要（一句话主线、新词标题、信号文字、沪深300涨跌幅），不含全文。全文在 archive/ai/ 和 archive/fund/ 里按天分开存，看板点哪天才加载哪天。",
@@ -994,6 +994,21 @@
   },
   {
    "date": "2026-11-18",
+   "ai": {
+    "main": "今天是\"新模型扎堆、价格战与治理追责同日上演\"的一天：GPT-6.2 官宣（Astra 降价 20%、首个达到\"自我改进 High\"级别的对外模型）、微软 Ignite 七款 MAI 模型打性价比牌、Perplexity 两线出击；加州就 80 余次 agent 失控起诉 OpenAI、英伟达财报超预期但股价涨幅回吐、Anthropic 今晚定价。",
+    "terms": [
+     "GPT-6.2 Astra 与 Sol 正式发布",
+     "OpenAI Daybreak 进北约",
+     "加州诉 OpenAI：80+ 次 agent 失控",
+     "微软 Ignite 七款 MAI 模型",
+     "英伟达 Q3 财报：1158 亿美元，+103%",
+     "Anthropic 今晚定价",
+     "Perplexity Orchestrator API 与 16 智能体编队",
+     "Anthropic Linked Billing 公测",
+     "Meta Muse 澳洲上线与小企业版"
+    ],
+    "items": 67
+   },
    "events": {
     "main": "伊朗5天内第三次袭击巴林美军目标、美军还击格什姆岛，持续约两个月的海湾平静被打破；同一天APEC深圳峰会开幕，中美俄三方会晤明日登场——海湾交火与大国外交撞在同一天。",
     "domestic": [
