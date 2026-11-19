@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>技能目录 · 我的 AI 工具箱</title><style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:960px;margin:0 auto;padding:16px;color:#222;line-height:1.6;background:#f7f5f0}
+h1{font-size:24px;margin:8px 0 4px}.sub{color:#666;font-size:14px}
+.card{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:18px;margin:14px 0}
+.card h2{margin:0 0 8px;font-size:18px}.card p{margin:6px 0}
+a{color:#0b6fa4}.muted{color:#888;font-size:13px}
+.bar-row{display:flex;align-items:flex-end;gap:3px;height:120px;padding-top:8px;border-bottom:1px solid #ddd;overflow-x:auto}
+.bar{flex:1;min-width:14px;border-radius:3px 3px 0 0;position:relative}
+.bar.up{background:#2e7d32}.bar.down{background:#c62828}.bar.none{background:#ccc}
+.bar-lab{font-size:11px;color:#666;white-space:nowrap}
+.chip{display:inline-block;background:#eef6fb;border-radius:12px;padding:2px 10px;margin:2px;font-size:13px}
+.daybtn{display:inline-block;margin:3px;padding:8px 12px;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer;font-size:14px}
+.daybtn.sel{background:#1f4d3a;color:#fff;border-color:#1f4d3a}
+.daybtn.missing{opacity:.45}
+input[type=search]{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-size:15px;box-sizing:border-box}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid #eee;padding:6px 4px;text-align:left;vertical-align:top}
+a.btn{display:inline-block;margin-top:10px;background:#1f4d3a;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:16px}
+a.btn.grey{background:#666}
+.detail-sec{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:20px;margin:16px 0}
+.detail-sec h2{font-size:19px;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid #1f4d3a}
+.detail-sec h3{font-size:17px;margin:18px 0 8px}
+.detail-sec h4{font-size:16px;margin:16px 0 8px}
+.detail-sec p{font-size:16px;line-height:1.9;margin:10px 0}
+.detail-sec li{font-size:16px;line-height:1.9;margin:8px 0}
+.detail-sec ul,.detail-sec ol{padding-left:22px;margin:10px 0}
+.detail-sec blockquote{margin:12px 0;padding:12px 16px;background:#f0f4f1;border-left:4px solid #1f4d3a;border-radius:0 8px 8px 0;color:#444;font-size:15px;line-height:1.8}
+.detail-sec hr{border:none;border-top:1px solid #e5e0d8;margin:18px 0}
+.detail-sec code{background:#f2f2f2;border-radius:4px;padding:1px 6px;font-size:14px}
+.detail-sec .tbl{overflow-x:auto;margin:12px 0}
+.detail-sec .tbl table{font-size:14px;min-width:560px}
+.detail-sec .tbl th{background:#f7f5f0}
+.detail-sec .tbl td,.detail-sec .tbl th{border-bottom:1px solid #eee;padding:8px 6px}
+.nav{font-size:15px;margin:6px 0}
+.nav a{margin-right:14px}
+@media(max-width:600px){h1{font-size:20px}.card{padding:14px}.detail-sec{padding:14px}.detail-sec p,.detail-sec li{font-size:15px}}
+</style></head>
+<body>
+<h1>🛠 技能目录</h1>
+<p class="nav"><a href="index.html">← 回目录</a><a href="fund.html">基金看板</a><a href="ai.html">AI看板</a><a href="events.html">大事看板</a><a href="entertainment.html">娱乐看板</a><a href="fitness.html">健身看板</a><a href="english.html">英语看板</a><a href="dashboard.html">总览</a></p>
+<p class="sub">每次找我学一个新技能，我都会按学到的顺序总结进这一页。忘记了就回来翻。</p>
+<blockquote>规矩：只有你找我学新技能的时候，我才会往这页里写；平时每天的定时推送不会往里加东西。每学一个技能，我就按这页的格式总结进来，按学到的顺序排。忘记了就回来翻，不用重新问。</blockquote>
+<div class="card"><h2>技能 01 · GitHub 从 0 到 1（2026-11-17 已学会）</h2>
+<h3>先把 GitHub 是什么讲成人话</h3>
+<ul><li><b>仓库 Repository</b>：网上的一个项目文件夹，一个项目一个仓库</li><li><b>提交 Commit</b>：点一下“保存”，还会自动记下你改了什么，随时能回到以前的版本</li><li><b>发布 Pages</b>：GitHub 免费帮你把网页上线，生成一个链接，别人点开就能看</li><li><b>README.md</b>：仓库的说明书，打开仓库第一眼看到的介绍</li><li><b>index.html</b>：浏览器打开的网页文件；MD 是笔记格式，HTML 是浏览器格式，两者不会自动同步，改了哪个就要提交哪个</li></ul>
+<h3>第 1 步：建仓库</h3>
+<ol><li>GitHub 首页右上角点 <b>+</b> → <b>New repository</b></li><li>Repository name 填 <code>my-ai-toolbox</code>，选 <b>Public</b>，勾上 <b>Add a README file</b></li><li>点 <b>Create repository</b>，仓库地址是 <a href="https://github.com/dyixia67-art/my-ai-toolbox" target="_blank">https://github.com/dyixia67-art/my-ai-toolbox</a></li></ol>
+<h3>第 2 步：新建 index.html</h3>
+<ol><li>仓库页面点 <b>Add file</b> → <b>Create new file</b></li><li>文件名填 <code>index.html</code>，粘贴网页代码</li><li>右上角点 <b>Commit changes</b>（第一次提交号 6510740）</li></ol>
+<h3>第 3 步：开 Pages 发布上线</h3>
+<ol><li>仓库页面点 <b>Settings</b> → 左边点 <b>Pages</b></li><li>Build and deployment 选 <b>Deploy from a branch</b>，Branch 选 <b>main</b>、文件夹选 <b>/(root)</b></li><li>点 <b>Save</b>，等 1–2 分钟，网址 <a href="https://dyixia67-art.github.io/my-ai-toolbox/" target="_blank">https://dyixia67-art.github.io/my-ai-toolbox/</a> 就能打开</li></ol>
+<h3>第 4 步：自己改页面，加一张卡</h3>
+<ol><li>仓库里点 <b>index.html</b> → 右上角铅笔 <b>Edit</b></li><li>在 DeepSeek 卡片后面粘贴 Groq 卡片代码</li><li>点 <b>Commit changes</b>，等 1–2 分钟，页面上就多一张卡</li></ol>
+<h3>第 5 步：从 GitHub 下载别人的开源项目（拿 Cherry Studio 练手）</h3>
+<ol><li>打开 <a href="https://github.com/CherryHQ/cherry-studio" target="_blank">https://github.com/CherryHQ/cherry-studio</a> ，看页面右边的 <b>Releases</b> 一栏，点最新一条 <b>v2.2.2</b>（或点 Releases 标题进列表）</li><li>在 <b>Assets</b> 里找 <code>Cherry-Studio-2.2.2-win-x64-setup.exe</code> 点它下载；不要点 <b>Source code (zip)</b>，那是源代码，不是安装包</li><li>下载完双击 <code>.exe</code>，按提示装完打开 Cherry Studio，这就是“下载别人的开源项目并装上”的完整链路</li><li>只有代码、没有安装包的项目（比如 11 月 16 日日报推过的 google-labs-code/stitch-skills 技能包），那时才用页面上绿色的 <b>Code → Download ZIP</b>，解压后得到的是文件夹和 SKILL.md 等文件，不是安装程序</li></ol>
+<h3>让 Muse 定时帮你更新：Token 钥匙</h3>
+<p>你这个账号不支持密码登录，所以定时任务不能走浏览器登录，要用一把专用钥匙：</p>
+<ol><li>右上角头像 → <b>Settings</b> → <b>Developer settings</b> → <b>Personal access tokens</b> → <b>Fine-grained tokens</b> → <b>Generate new token</b></li><li>名字填 <code>muse-ai-toolbox-monthly</code>，有效期 90 天（到 2027-02-15）</li><li>Repository access 选 <b>Only select repositories</b> → 勾 <code>my-ai-toolbox</code></li><li>Permissions 里 <b>Contents</b> 选 <b>Read and write</b>，点 <b>Generate token</b></li><li>Token 只在安全页面填一次，绝不发在聊天里</li></ol>
+<p>之后每天 07:30 大事、08:15 基金、21:30 AI，每周二 16:49 娱乐的推送，都会自动存档、推到 GitHub，不用你动手。</p>
+<h3>工具箱正式版是怎么搭的（顺带知道就行）</h3>
+<p>目录页 <code>index.html</code> + 看板页（基金 / AI / 大事 / 娱乐 / 健身 / 英语）+ 每天一个归档文件（<code>archive/基金-AI-大事-娱乐/YYYY-MM-DD.md</code>）+ <code>data/index.json</code> 摘要索引。看板只放摘要和图表，点日期才取当天全文，所以越用越久也不会变卡。加一个新板块 = 目录上加一张大卡 + 一个新页面文件。</p>
+</div>
+<div class="card"><h2>进阶功能（还没学，想学哪个跟我说一声，我按上面同样的写法一步一步带你做）</h2>
+<h3>进阶 1：用分支 Branch 做试验，不动主页面</h3>
+<ul><li><b>这是什么</b>：分支就是仓库的一条“平行线”，在上面改东西，主页面（main 分支）完全不受影响，改好了再合并回来。</li><li><b>什么时候用</b>：想大改页面、又怕改坏的时候；想试一个新板块，先在分支里试。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>仓库主页左上角点 <b>main</b> 按钮（分支下拉）</li><li>输入框里填新名字，比如 <code>test-新卡片</code>，点 <b>Create branch</b></li><li>在这个分支里改文件、点 <b>Commit changes</b>，主页面不会变</li><li>改好了点顶部 <b>Pull requests</b> → <b>New pull request</b> → 下面选 base 是 main、compare 是你的分支 → <b>Create pull request</b> → <b>Merge pull request</b> → <b>Confirm merge</b>，就合回主页面了</li></ol>
+<h3>进阶 2：看历史、回到以前的版本</h3>
+<ul><li><b>这是什么</b>：每次提交 GitHub 都留了底，History 里能看到每一次改了什么、什么时候改的。</li><li><b>什么时候用</b>：页面被改坏了、想看看以前长什么样的时候。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>仓库里点任意一个文件 → 右上角点 <b>History</b>（时钟图标）</li><li>列表里每一行就是一次提交，有时间、说明、改了几行</li><li>点任意一次提交，就能看到当时那个文件长什么样</li><li>网页上没有“一键回滚整个仓库”的按钮，最稳的办法是：找到想要的那一版，复制里面的内容，粘贴回当前文件，再点 <b>Commit changes</b></li></ol>
+<h3>进阶 3：改错了、删错了，怎么恢复</h3>
+<ul><li><b>这是什么</b>：删文件、改错内容都不可怕，History 里都有底，删了也能找回来。</li><li><b>什么时候用</b>：手滑删了文件、改错了内容的时候。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>文件页右上角点 <b>…</b> → <b>Delete file</b> → <b>Commit changes</b>，只是删了当前版，History 里还在</li><li>想恢复：点 <b>History</b> → 找到删之前的提交 → 点进去看当时的文件内容</li><li>复制内容 → <b>Add file</b> → <b>Create new file</b>，用原来的文件名粘贴 → <b>Commit changes</b>，文件就回来了</li><li>改错内容同理：去 History 里找到改之前的版本，复制粘贴回来再提交</li></ol>
+<h3>进阶 4：Fork 别人的仓库 + Star 收藏</h3>
+<ul><li><b>这是什么</b>：Fork 就是把别人的仓库完整复制一份到你自己账号下；Star 就是收藏。</li><li><b>什么时候用</b>：看到好用的开源项目，想自己改一改、或者先收着以后用的时候。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>打开别人的仓库，右上角点 <b>Fork</b> → <b>Create fork</b>，复制出来的仓库就在你账号下了</li><li>Fork 来的仓库你随便改，不影响原作者</li><li>想收藏点右上角的 <b>Star</b>（星星），以后在你头像 → <b>Your stars</b> 里找</li></ol>
+<h3>进阶 5：给仓库加协作者、接受别人的修改</h3>
+<ul><li><b>这是什么</b>：协作者就是你允许直接改你仓库的人；别人改你的仓库要先提 Pull Request，你点头才合并。</li><li><b>什么时候用</b>：想让朋友或家人一起改工具箱的时候。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>仓库页面点 <b>Settings</b> → <b>Collaborators</b> → <b>Add people</b></li><li>输入对方的 GitHub 用户名 → 发邀请，对方接受后就能直接改你的仓库</li><li>别人想改你的仓库：他先 <b>Fork</b> → 改完点 <b>Pull requests</b> → <b>New pull request</b></li><li>你收到后点 <b>Files changed</b> 看他改了什么，没问题点 <b>Merge pull request</b> 合并</li></ol>
+<h3>进阶 6：用 Issues 记待办</h3>
+<ul><li><b>这是什么</b>：仓库自带的待办清单，一条 Issue 就是一件待办的事。</li><li><b>什么时候用</b>：想到“工具箱要加个健身板块”“这张卡片字太小”这种事，先记下来不忘。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>仓库顶部点 <b>Issues</b> 标签 → <b>New issue</b></li><li>写标题和内容，比如“工具箱加一个健身板块” → <b>Submit new issue</b></li><li>做完了打开这条 Issue 点 <b>Close issue</b>，就划掉了</li></ol>
+<h3>进阶 7：把 README 写得更好看</h3>
+<ul><li><b>这是什么</b>：README 就是打开仓库第一眼看到的介绍，写好了别人一眼就知道这个仓库是干嘛的。</li><li><b>什么时候用</b>：想让工具箱仓库看起来更像样、更好找的时候。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>仓库里点 <b>README.md</b> → 右上角铅笔 <b>Edit</b></li><li>用 Markdown 写：<code>#</code> 大标题、<code>##</code> 小标题、<code>-</code> 列表、<code>[文字](链接)</code>、<code>![图片说明](图片地址)</code></li><li>想加徽章（比如显示“每天更新”）去 shields.io 生成，复制代码粘贴进来</li><li>改完点 <b>Commit changes</b></li></ol>
+<h3>进阶 8：GitHub Actions：改完自动发布</h3>
+<ul><li><b>这是什么</b>：GitHub 自带的自动化，提交代码后自动跑流程，比如自动发布、自动检查。</li><li><b>什么时候用</b>：等你想加“改完自动检查、自动生成页面”这种高级玩法的时候。</li><li><b>怎么做</b>：</li></ul>
+<ol><li>仓库顶部点 <b>Actions</b> 标签 → <b>New workflow</b></li><li>选一个现成的模板（比如 Pages 的 Static HTML）→ <b>Commit changes</b></li><li>以后每次提交，GitHub 都会自动跑这个流程帮你发布</li><li>注意：你现在用的 Pages 是 <b>Deploy from a branch</b>，已经够用了；Actions 是更高级的玩法，不急着学</li></ol>
+</div>
+<p class="muted">可编辑的原文：<a href="skills.md">skills.md</a>（改完原文跑 build_skills.py 重新生成本页，再推到 GitHub）。</p>
+</body></html>

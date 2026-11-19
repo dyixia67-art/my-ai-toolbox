@@ -1,0 +1,140 @@
+# 🛠 技能目录
+
+> 规矩：只有你找我学新技能的时候，我才会往这页里写；平时每天的定时推送不会往里加东西。每学一个技能，我就按这页的格式总结进来，按学到的顺序排。忘记了就回来翻，不用重新问。
+
+## 技能 01 · GitHub 从 0 到 1（2026-11-17 已学会）
+
+### 先把 GitHub 是什么讲成人话
+
+- **仓库 Repository**：网上的一个项目文件夹，一个项目一个仓库
+- **提交 Commit**：点一下“保存”，还会自动记下你改了什么，随时能回到以前的版本
+- **发布 Pages**：GitHub 免费帮你把网页上线，生成一个链接，别人点开就能看
+- **README.md**：仓库的说明书，打开仓库第一眼看到的介绍
+- **index.html**：浏览器打开的网页文件；MD 是笔记格式，HTML 是浏览器格式，两者不会自动同步，改了哪个就要提交哪个
+
+### 第 1 步：建仓库
+
+1. GitHub 首页右上角点 **+** → **New repository**
+2. Repository name 填 `my-ai-toolbox`，选 **Public**，勾上 **Add a README file**
+3. 点 **Create repository**，仓库地址是 https://github.com/dyixia67-art/my-ai-toolbox
+
+### 第 2 步：新建 index.html
+
+1. 仓库页面点 **Add file** → **Create new file**
+2. 文件名填 `index.html`，粘贴网页代码
+3. 右上角点 **Commit changes**（第一次提交号 6510740）
+
+### 第 3 步：开 Pages 发布上线
+
+1. 仓库页面点 **Settings** → 左边点 **Pages**
+2. Build and deployment 选 **Deploy from a branch**，Branch 选 **main**、文件夹选 **/(root)**
+3. 点 **Save**，等 1–2 分钟，网址 https://dyixia67-art.github.io/my-ai-toolbox/ 就能打开
+
+### 第 4 步：自己改页面，加一张卡
+
+1. 仓库里点 **index.html** → 右上角铅笔 **Edit**
+2. 在 DeepSeek 卡片后面粘贴 Groq 卡片代码
+3. 点 **Commit changes**，等 1–2 分钟，页面上就多一张卡
+
+### 第 5 步：从 GitHub 下载别人的开源项目（拿 Cherry Studio 练手）
+
+1. 打开 https://github.com/CherryHQ/cherry-studio ，看页面右边的 **Releases** 一栏，点最新一条 **v2.2.2**（或点 Releases 标题进列表）
+2. 在 **Assets** 里找 `Cherry-Studio-2.2.2-win-x64-setup.exe` 点它下载；不要点 **Source code (zip)**，那是源代码，不是安装包
+3. 下载完双击 `.exe`，按提示装完打开 Cherry Studio，这就是“下载别人的开源项目并装上”的完整链路
+4. 只有代码、没有安装包的项目（比如 11 月 16 日日报推过的 google-labs-code/stitch-skills 技能包），那时才用页面上绿色的 **Code → Download ZIP**，解压后得到的是文件夹和 SKILL.md 等文件，不是安装程序
+
+### 让 Muse 定时帮你更新：Token 钥匙
+
+你这个账号不支持密码登录，所以定时任务不能走浏览器登录，要用一把专用钥匙：
+
+1. 右上角头像 → **Settings** → **Developer settings** → **Personal access tokens** → **Fine-grained tokens** → **Generate new token**
+2. 名字填 `muse-ai-toolbox-monthly`，有效期 90 天（到 2027-02-15）
+3. Repository access 选 **Only select repositories** → 勾 `my-ai-toolbox`
+4. Permissions 里 **Contents** 选 **Read and write**，点 **Generate token**
+5. Token 只在安全页面填一次，绝不发在聊天里
+
+之后每天 07:30 大事、08:15 基金、21:30 AI，每周二 16:49 娱乐的推送，都会自动存档、推到 GitHub，不用你动手。
+
+### 工具箱正式版是怎么搭的（顺带知道就行）
+
+目录页 `index.html` + 看板页（基金 / AI / 大事 / 娱乐 / 健身 / 英语）+ 每天一个归档文件（`archive/基金-AI-大事-娱乐/YYYY-MM-DD.md`）+ `data/index.json` 摘要索引。看板只放摘要和图表，点日期才取当天全文，所以越用越久也不会变卡。加一个新板块 = 目录上加一张大卡 + 一个新页面文件。
+
+## 进阶功能（还没学，想学哪个跟我说一声，我按上面同样的写法一步一步带你做）
+
+### 进阶 1：用分支 Branch 做试验，不动主页面
+
+- **这是什么**：分支就是仓库的一条“平行线”，在上面改东西，主页面（main 分支）完全不受影响，改好了再合并回来。
+- **什么时候用**：想大改页面、又怕改坏的时候；想试一个新板块，先在分支里试。
+- **怎么做**：
+  1. 仓库主页左上角点 **main** 按钮（分支下拉）
+  2. 输入框里填新名字，比如 `test-新卡片`，点 **Create branch**
+  3. 在这个分支里改文件、点 **Commit changes**，主页面不会变
+  4. 改好了点顶部 **Pull requests** → **New pull request** → 下面选 base 是 main、compare 是你的分支 → **Create pull request** → **Merge pull request** → **Confirm merge**，就合回主页面了
+
+### 进阶 2：看历史、回到以前的版本
+
+- **这是什么**：每次提交 GitHub 都留了底，History 里能看到每一次改了什么、什么时候改的。
+- **什么时候用**：页面被改坏了、想看看以前长什么样的时候。
+- **怎么做**：
+  1. 仓库里点任意一个文件 → 右上角点 **History**（时钟图标）
+  2. 列表里每一行就是一次提交，有时间、说明、改了几行
+  3. 点任意一次提交，就能看到当时那个文件长什么样
+  4. 网页上没有“一键回滚整个仓库”的按钮，最稳的办法是：找到想要的那一版，复制里面的内容，粘贴回当前文件，再点 **Commit changes**
+
+### 进阶 3：改错了、删错了，怎么恢复
+
+- **这是什么**：删文件、改错内容都不可怕，History 里都有底，删了也能找回来。
+- **什么时候用**：手滑删了文件、改错了内容的时候。
+- **怎么做**：
+  1. 文件页右上角点 **…** → **Delete file** → **Commit changes**，只是删了当前版，History 里还在
+  2. 想恢复：点 **History** → 找到删之前的提交 → 点进去看当时的文件内容
+  3. 复制内容 → **Add file** → **Create new file**，用原来的文件名粘贴 → **Commit changes**，文件就回来了
+  4. 改错内容同理：去 History 里找到改之前的版本，复制粘贴回来再提交
+
+### 进阶 4：Fork 别人的仓库 + Star 收藏
+
+- **这是什么**：Fork 就是把别人的仓库完整复制一份到你自己账号下；Star 就是收藏。
+- **什么时候用**：看到好用的开源项目，想自己改一改、或者先收着以后用的时候。
+- **怎么做**：
+  1. 打开别人的仓库，右上角点 **Fork** → **Create fork**，复制出来的仓库就在你账号下了
+  2. Fork 来的仓库你随便改，不影响原作者
+  3. 想收藏点右上角的 **Star**（星星），以后在你头像 → **Your stars** 里找
+
+### 进阶 5：给仓库加协作者、接受别人的修改
+
+- **这是什么**：协作者就是你允许直接改你仓库的人；别人改你的仓库要先提 Pull Request，你点头才合并。
+- **什么时候用**：想让朋友或家人一起改工具箱的时候。
+- **怎么做**：
+  1. 仓库页面点 **Settings** → **Collaborators** → **Add people**
+  2. 输入对方的 GitHub 用户名 → 发邀请，对方接受后就能直接改你的仓库
+  3. 别人想改你的仓库：他先 **Fork** → 改完点 **Pull requests** → **New pull request**
+  4. 你收到后点 **Files changed** 看他改了什么，没问题点 **Merge pull request** 合并
+
+### 进阶 6：用 Issues 记待办
+
+- **这是什么**：仓库自带的待办清单，一条 Issue 就是一件待办的事。
+- **什么时候用**：想到“工具箱要加个健身板块”“这张卡片字太小”这种事，先记下来不忘。
+- **怎么做**：
+  1. 仓库顶部点 **Issues** 标签 → **New issue**
+  2. 写标题和内容，比如“工具箱加一个健身板块” → **Submit new issue**
+  3. 做完了打开这条 Issue 点 **Close issue**，就划掉了
+
+### 进阶 7：把 README 写得更好看
+
+- **这是什么**：README 就是打开仓库第一眼看到的介绍，写好了别人一眼就知道这个仓库是干嘛的。
+- **什么时候用**：想让工具箱仓库看起来更像样、更好找的时候。
+- **怎么做**：
+  1. 仓库里点 **README.md** → 右上角铅笔 **Edit**
+  2. 用 Markdown 写：`#` 大标题、`##` 小标题、`-` 列表、`[文字](链接)`、`![图片说明](图片地址)`
+  3. 想加徽章（比如显示“每天更新”）去 shields.io 生成，复制代码粘贴进来
+  4. 改完点 **Commit changes**
+
+### 进阶 8：GitHub Actions：改完自动发布
+
+- **这是什么**：GitHub 自带的自动化，提交代码后自动跑流程，比如自动发布、自动检查。
+- **什么时候用**：等你想加“改完自动检查、自动生成页面”这种高级玩法的时候。
+- **怎么做**：
+  1. 仓库顶部点 **Actions** 标签 → **New workflow**
+  2. 选一个现成的模板（比如 Pages 的 Static HTML）→ **Commit changes**
+  3. 以后每次提交，GitHub 都会自动跑这个流程帮你发布
+  4. 注意：你现在用的 Pages 是 **Deploy from a branch**，已经够用了；Actions 是更高级的玩法，不急着学
