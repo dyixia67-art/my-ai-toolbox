@@ -68,8 +68,8 @@ function inlineMd(s){
   s=s.replace(/`([^`]+)`/g,function(m,c){codes.push(c);return '@@CODE'+(codes.length-1)+'@@';});
   s=s.replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
   s=s.replace(/(^|[^*])\*([^*]+)\*/g,'$1<i>$2</i>');
-  s=s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
-  s=s.replace(/(https?:\/\/[^\s<>"'）)]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+  s=s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,function(m,t,u){ if(/\.mp3(\?|#|$)/i.test(u)) return '<audio controls preload="none" src="'+u+'" style="width:100%;margin:8px 0"></audio><br><a href="'+u+'" target="_blank" rel="noopener">'+t+'</a>'; return '<a href="'+u+'" target="_blank" rel="noopener">'+t+'</a>'; });
+  s=s.replace(/(?<!=")(https?:\/\/[^\s<>"'）)]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
   s=s.replace(/@@CODE(\d+)@@/g,function(m,i){return '<code>'+codes[+i]+'</code>';});
   return s;
 }
