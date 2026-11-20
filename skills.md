@@ -116,6 +116,12 @@
 - 文字转语音：hexgrad/Kokoro-TTS
 - 照片变视频：zerogpu-aoti/wan2-2-fp8da-aoti-faster
 
+### 做歌：MusicGen 做纯音乐，ACE-Step 做带歌词的歌
+
+- **纯音乐（MusicGen）**：Spaces 搜 `facebook/MusicGen`，描述框输英文风格，比如 `relaxing Cantonese restaurant background music, guzheng and soft piano, warm, slow tempo`，选 30 秒，点 Generate，下载当视频 BGM。注意：MusicGen 是非商业授权，自己玩、发朋友圈没问题，正式商用前先确认授权。
+- **带歌词的歌（ACE-Step 1.5）**：Spaces 搜 `ACE-Step/Ace-Step-v1.5`，Prompt 写风格、Lyrics 填歌词，点 Generate Music，10 秒到 10 分钟都能做，MIT 协议，商用宽松。第一次先做 60–90 秒，省额度。
+- **仿《情话Butterflies》风格的做法**：那首是荣涉 2026-11-03 发的甜甜告白歌，改编自艾茹芸原唱的同题情歌，特点是声音清亮但不往上飘、像傍晚散步时自己哼着玩、编曲简单不堆东西。原曲页面写了未经许可不得翻唱翻录，所以要做就做同风格原创，不要照抄原曲歌词。Prompt 用 `sweet Chinese pop love song, gentle clear male vocals, soft and intimate delivery like humming on an evening walk, light acoustic guitar and soft piano, simple arrangement, bilingual Mandarin-English lyrics, warm, tender, unhurried`；歌词自己写新的，比如傍晚的风、晚霞、Butterflies、小鹿乱撞这些意象。想换女声就把 male vocals 改成 female vocals。
+
 ## 进阶功能（还没学，想学哪个跟我说一声，我按上面同样的写法一步一步带你做）
 
 ### 进阶 1：用分支 Branch 做试验，不动主页面
