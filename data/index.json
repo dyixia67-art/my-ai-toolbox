@@ -2,7 +2,7 @@
  "meta": {
   "title": "每日趋势看板 · 数据索引",
   "generated": "2026-11-20",
-  "ai_range": "2026-10-18 至 2026-11-19（33期）",
+  "ai_range": "2026-10-18 至 2026-11-20（34期）",
   "fund_range": "2026-09-26 至 2026-11-20（48期）",
   "rows": 57,
   "note": "本文件只含摘要（一句话主线、新词标题、信号文字、沪深300涨跌幅），不含全文。全文在 archive/ai/ 和 archive/fund/ 里按天分开存，看板点哪天才加载哪天。",
@@ -1168,6 +1168,22 @@
      "15 分钟四步"
     ],
     "items": 5
+   },
+   "ai": {
+    "main": "今天是\"上市首日冲高回落、英伟达跌破年内低点、DeepSeek 融资落地\"的一天：Anthropic 首日收 $97.17（+17%），开盘 $111.50 的涨幅回吐近六成；英伟达六连跌后跌破 52 周低点，加州总检察长又为对华芯片发来传票；DeepSeek 第二轮融资的工商变更落地，31 家外部出资方进场。同一天 agent 从\"被动等指令\"走向\"主动干活\"：OpenAI 的 dots 开始向企业版全量推送，Google 则把电脑操作与工具检索塞进 Gemini。",
+    "terms": [
+     "ANT 首日收盘 $97.17（+17%）：开盘 $111.50，涨幅回吐近六成",
+     "英伟达跌破 52 周低点：六连跌收 $145.98，加州传票",
+     "DeepSeek 二轮融资工商落地：31 家出资方，腾讯第一大单一出资方",
+     "OpenAI dots 向企业版全量推送，Plus 小范围测试",
+     "新词 Silent Consensus：人类不知不觉把制度权威让渡给 AI",
+     "独立榜单：GPT-6.2 Astra 68.3 分第 2，Gemini 4 Neon 68.0 分第 4",
+     "GPT-Live-1.1 语音 API / Google Tool Retrieval 预览 / Gemini Mac 电脑操作",
+     "Genie 4 进 Gemini API / Antigravity 原生 SSH / Codex Performance Factory",
+     "NVIDIA MotionBricks 开源 / Gemini Tasks 免费打电话 / ChatGPT Health 扩展",
+     "开源技能：ffmpeg-skill 本地视频剪辑 + taste-skill 设计品味"
+    ],
+    "items": 28
    }
   },
   {
