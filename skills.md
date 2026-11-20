@@ -59,6 +59,63 @@
 
 目录页 `index.html` + 看板页（基金 / AI / 大事 / 娱乐 / 健身 / 英语）+ 每天一个归档文件（`archive/基金-AI-大事-娱乐/YYYY-MM-DD.md`）+ `data/index.json` 摘要索引。看板只放摘要和图表，点日期才取当天全文，所以越用越久也不会变卡。加一个新板块 = 目录上加一张大卡 + 一个新页面文件。
 
+## 技能 02 · Hugging Face 从 0 到 1（2026-11-20 已学会）
+
+### 先把 Hugging Face 是什么讲成人话
+
+- **AI 界的 GitHub**：GitHub 放代码，它放 AI 模型和 AI 小应用
+- **Models 模型库**：300 多万个模型，是仓库，给开发者挑模型用的，你平时不用逛
+- **Spaces 应用商店**：别人做好的 AI 小应用，点开就能用，不用下载、不用装，这是你的主战场
+- **Datasets 数据集**：训练模型用的数据，你基本用不上
+- **Buckets**：存大文件用的对象存储，一般用户用不上
+- **顶部搜索框**：搜模型、数据集、用户；要搜应用先点 Spaces 再搜
+- **Docs**：使用文档；**Pricing**：价格页；**Enterprise**：企业版，不用管
+
+### 免费版的限制在哪
+
+- 注册免费，浏览、下载模型、玩别人的 Spaces 都免费
+- 每天共享 GPU（ZeroGPU）只有 **5 分钟**，用完要等明天；PRO 每月 9 美元，有 40 分钟
+- 调用模型的 API（Inference Providers）免费账号**没有每月免费额度**，要用得先买额度或开 PRO（9 美元/月含 2 美元额度）
+- 自己发布应用：免费账号最多 2 个带免费 GPU 的 Space
+- 免费账号每 5 分钟最多 1000 次 API 请求，正常浏览够用了
+
+### 第 1 步：注册账号
+
+1. 打开 huggingface.co → 右上角 **Sign Up** → 填邮箱、密码
+2. 完成个人资料：**Username 只能用英文字母、数字、短横线**（不能中文、不能纯数字、不能以横线开头结尾），比如 `deng388`；**Full name 可以填中文**，随便填名字或昵称
+
+### 第 2 步：生第一张图（FLUX.1-schnell）
+
+1. 顶部点 **Spaces** → 搜索框输 `FLUX.1-schnell`
+2. 点 `black-forest-labs/FLUX.1-schnell` 进去，等十几秒醒过来
+3. Prompt 框里输英文描述，比如 `a bowl of Cantonese claypot rice, steam rising, warm restaurant lighting, food photography`
+4. 点 **Run**，等一会儿出图，点图片下面的下载按钮保存
+
+### 第 3 步：抠图（Background Removal）
+
+1. Spaces 搜 `background-removal`，点 `not-lain/background-removal`
+2. 把图片拖进上传框，点 **Submit**，等一会儿拿到透明底 PNG
+3. 点下载，拼海报时直接用
+
+### 第 4 步：收藏好用的 Space
+
+点 Space 页面右上角的 **❤️**，以后在头像 → 收藏里找，不用再搜。
+
+### 怎么判断一个 Space 靠不靠谱
+
+- 看 ❤️ 数和最近更新时间，人气高、最近更新过的优先
+- 点开直接能用的，就是 Hugging Face 在出算力；一打开就让你粘贴 API Key 的，是作者接了外部模型
+- 免费的排队久、老转圈是正常的，换个时间或换个同类 Space 就行
+
+### 常用 Spaces 清单
+
+- 生图：black-forest-labs/FLUX.1-schnell
+- 改图：black-forest-labs/FLUX.1-Kontext-Dev
+- 抠图：not-lain/background-removal
+- 放大变清晰：Phips/Upscaler
+- 文字转语音：hexgrad/Kokoro-TTS
+- 照片变视频：zerogpu-aoti/wan2-2-fp8da-aoti-faster
+
 ## 进阶功能（还没学，想学哪个跟我说一声，我按上面同样的写法一步一步带你做）
 
 ### 进阶 1：用分支 Branch 做试验，不动主页面
